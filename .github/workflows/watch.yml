@@ -1,0 +1,52 @@
+name: Adopt Me trade watch
+
+# Runs the standalone checker every 15 minutes and publishes the dashboard
+# to GitHub Pages. Free on a PUBLIC repo (unlimited Actions minutes + Pages).
+# On a private repo, the 2,000 min/month free allowance does NOT cover a
+# 15-minute cadence (~2,900 min/month), and Pages needs a paid plan — so
+# keep this repo public. The repo contains no inventory and no match flags:
+# matches highlight locally in each visitor's browser only.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:  # manual run button, also used for the first test
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright + Chromium (Elvebredd browser step)
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Run the watch
+        env:
+          # Secret — never commit the topic name to the repo. Anyone who
+          # guesses it can read the (generic, inventory-free) notifications.
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          # Project Pages URL for this repo. If you publish as a user site
+          # (<owner>.github.io), change this to https://<owner>.github.io/
+          DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python3 watch.py
+
+      - name: Commit updated dashboard and data
+        run: |
+          git config user.name "adopt-me-watch"
+          git config user.email "adopt-me-watch@users.noreply.github.com"
+          git add index.html data/listings.json data/seen.json
+          git diff --cached --quiet || git commit -m "trade watch update"
+          git push
