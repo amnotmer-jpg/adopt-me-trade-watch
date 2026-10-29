@@ -363,6 +363,7 @@ offered) — plain, FR, MFR and the rest are all different to the matcher.
 <button onclick="clearInv()">Clear</button>
 <span id="invStatus" class="meta"></span>
 <br><label><input type="checkbox" id="onlyMine" onclick="toggleOnlyMine()"> For me only — show just cards whose You side I can fill exactly</label>
+<br><label><input type="checkbox" id="activeOnly" onclick="toggleActiveOnly()"> Active only — hide completed history</label>
 <span id="onlyMineHint" class="meta"></span></div>
 
 <div id="sections"></div>
@@ -432,6 +433,10 @@ function toggleOnlyMine(){
   try{localStorage.setItem("amw-only-mine", document.getElementById("onlyMine").checked?"1":"0");}catch(e){}
   render();
 }
+function toggleActiveOnly(){
+  try{localStorage.setItem("amw-active-only", document.getElementById("activeOnly").checked?"1":"0");}catch(e){}
+  render();
+}
 function render(){
   const data=JSON.parse(document.getElementById("watch-data").textContent);
   const inv=getInv();
@@ -447,10 +452,18 @@ function render(){
     document.getElementById("onlyMineHint").textContent =
       inv.length ? "" : "Save your inventory above to use For me only.";
   }
+  const ab=document.getElementById("activeOnly");
+  let activeOnly=false;
+  if(ab){
+    try{activeOnly=localStorage.getItem("amw-active-only")==="1";}catch(e){}
+    ab.checked=activeOnly;
+  }
   function sectionHtml(items){
     const enriched=items.map(it=>({it, mine:isForMe(it, inv)}));
     enriched.sort((a,b)=>(b.mine-a.mine));
-    const shown=(onlyMine&&inv.length)?enriched.filter(e=>e.mine):enriched;
+    let shown=enriched;
+    if(onlyMine&&inv.length) shown=shown.filter(e=>e.mine);
+    if(activeOnly) shown=shown.filter(e=>e.it.status!=="Completed");
     return {html: shown.map(e=>cardHtml(e.it)).join(""), shown: shown.length, total: items.length};
   }
   let out="";
@@ -460,14 +473,18 @@ function render(){
       "regular "+(pet.elvebredd.regular??"—")+", no-pot "+(pet.elvebredd.no_potion??"—")+
       ", neon "+(pet.elvebredd.neon??"—")+", mega "+(pet.elvebredd.mega??"—")+
       "<br>AMTV check: "+pet.amtv_status+" · Elvebredd feed: "+pet.elvebredd_status+"</p>";
+    const filtering=(onlyMine&&inv.length)||activeOnly;
+    let tag="";
+    if(onlyMine&&inv.length) tag+=" — for you";
+    if(activeOnly) tag+=" — active only";
     if(pet.new_items.length){
       const s=sectionHtml(pet.new_items);
-      out+="<h3>New this check"+(onlyMine&&inv.length?" — for you ("+s.shown+" of "+s.total+")":" ("+s.total+")")+"</h3>";
-      out+=s.html||"<p class='meta'>Nothing for you in this check.</p>";
+      out+="<h3>New this check"+tag+(filtering?" ("+s.shown+" of "+s.total+")":" ("+s.total+")")+"</h3>";
+      out+=s.html||"<p class='meta'>"+(filtering?"Nothing here with these filters.":"None yet.")+"</p>";
     }
     const r=sectionHtml(pet.recent_items);
-    out+="<h3>Recent"+(onlyMine&&inv.length?" — for you ("+r.shown+" of "+r.total+")":" ("+r.total+")")+"</h3>";
-    out+=r.html||"<p class='meta'>None yet.</p>";
+    out+="<h3>Recent"+tag+(filtering?" ("+r.shown+" of "+r.total+")":" ("+r.total+")")+"</h3>";
+    out+=r.html||"<p class='meta'>"+(filtering?"Nothing here with these filters.":"None yet.")+"</p>";
   }
   function cardHtml(it){
     const actionable=it.status!=="Completed";
