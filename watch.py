@@ -55,6 +55,24 @@ SEEN_PATH = os.path.join(DATA_DIR, "seen.json")
 LISTINGS_PATH = os.path.join(DATA_DIR, "listings.json")
 INDEX_PATH = os.path.join(ROOT, "index.html")
 
+# AMTV id -> pet name, from the user's master database (pet_names.json
+# sits next to this script in the repo). Missing file or unknown id
+# simply means the "icon #..." label stays — names are never invented.
+PET_NAMES_PATH = os.path.join(ROOT, "pet_names.json")
+
+
+def load_pet_names():
+    try:
+        with open(PET_NAMES_PATH) as fh:
+            data = json.load(fh)
+        return {str(k): v for k, v in data.items()
+                if isinstance(v, str)}
+    except Exception:
+        return {}
+
+
+PET_NAMES = load_pet_names()
+
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
@@ -491,6 +509,11 @@ def amtvs_to_cards(records):
                     _m = re.match(r"icon #(\d+)$", _e["name"])
                     if _m:
                         _e["amtv_id"] = _m.group(1)
+                # Resolve a known AMTV id to its pet name; unknown ids
+                # keep the "icon #..." label (never invent a name).
+                _id = _e.get("amtv_id")
+                if _id and _id in PET_NAMES:
+                    _e["name"] = PET_NAMES[_id]
         note = None
         if r["win_lose"]:
             note = f"Offer vs listed value: {r['win_lose']}"
