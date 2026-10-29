@@ -33,6 +33,7 @@
       "ed7624171b05df01b77a",
       "elve-099ed860e9736a645083",
       "elve-331f839d0aec4a254232",
+      "elve-d1863603e15d0c1df07e",
       "elve-f1e38316d94bab557da6",
       "f5b196091b66d611f559",
       "f8e17c81fa493f9decee",
@@ -81,10 +82,12 @@
       "elve-204446da1724c82b58ed",
       "elve-208aa49474885d7c4f60",
       "elve-241356da0d6dadea90b3",
+      "elve-28b2a1033c6c0398bd17",
       "elve-447e20d701b4793165ff",
       "elve-47de15db2ac4691c4407",
       "elve-4b54c56269d04e2d4b33",
       "elve-525c66b176162bf74c18",
+      "elve-5448ad3a43e782d2b9a0",
       "elve-5492113b7fc1d4c3a519",
       "elve-551cd76fcdd8092e0d2f",
       "elve-58de18718907c2435f5c",
@@ -99,6 +102,7 @@
       "elve-c715e66aa9798f2acb71",
       "elve-dfda5be6212ad89477f1",
       "elve-e77c60db01cd995b89c8",
+      "elve-e9adc4433ea78ade1e1c",
       "elve-ef96809a771a13aabe0b",
       "elve-f69f52bfc9ebfcbf4d8f",
       "elve-ff8f05ebbe219195d740",
@@ -133,12 +137,36 @@
       "elve-1f9311f505458aa80713",
       "elve-391218fe94c3d4b08c7a",
       "elve-751a1f322f42c364f8b0",
+      "elve-d8a1f00ad7aacdfb3cca",
       "f592d9a2eb89d4ec91be",
       "f61194def697aa389e3a"
     ]
   },
   "records": {
     "sugar_axolotl": [
+      {
+        "pet": "sugar_axolotl",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Sugar Axolotl",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "JordanTheFenix",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "7s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-d1863603e15d0c1df07e",
+        "first_seen": "2026-10-29 05:38 UTC"
+      },
       {
         "pet": "sugar_axolotl",
         "source": "elvebredd",
@@ -215,7 +243,8 @@
           {
             "name": "icon #1588",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1588"
           }
         ],
         "them_side": [
@@ -243,7 +272,8 @@
           {
             "name": "icon #2788",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2788"
           }
         ],
         "them_side": [
@@ -278,12 +308,14 @@
           {
             "name": "icon #1230",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1230"
           },
           {
             "name": "icon #1370",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1370"
           }
         ],
         "you_rp": 14.0,
@@ -304,7 +336,8 @@
           {
             "name": "icon #4072",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4072"
           }
         ],
         "them_side": [
@@ -339,92 +372,110 @@
           {
             "name": "icon #3900",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "3900"
           },
           {
             "name": "icon #1959",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1959"
           },
           {
             "name": "icon #10",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "10"
           },
           {
             "name": "icon #93",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "93"
           },
           {
             "name": "icon #77",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "77"
           },
           {
             "name": "icon #4076",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4076"
           },
           {
             "name": "icon #2505",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2505"
           },
           {
             "name": "icon #1393",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1393"
           },
           {
             "name": "icon #1765",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1765"
           },
           {
             "name": "icon #3952",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "3952"
           },
           {
             "name": "icon #1210",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1210"
           },
           {
             "name": "icon #1210",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1210"
           },
           {
             "name": "icon #1229",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1229"
           },
           {
             "name": "icon #4196",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4196"
           },
           {
             "name": "icon #4196",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4196"
           },
           {
             "name": "icon #4327",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4327"
           },
           {
             "name": "icon #2915",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2915"
           },
           {
             "name": "icon #2871",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2871"
           }
         ],
         "you_rp": 13.6,
@@ -445,12 +496,14 @@
           {
             "name": "icon #54",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "54"
           },
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           }
         ],
         "them_side": [
@@ -485,17 +538,20 @@
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           }
         ],
         "you_rp": 14.0,
@@ -516,12 +572,14 @@
           {
             "name": "icon #4373",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4373"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           }
         ],
         "them_side": [
@@ -556,7 +614,8 @@
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           }
         ],
         "you_rp": 14.0,
@@ -584,7 +643,8 @@
           {
             "name": "icon #4363",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4363"
           }
         ],
         "you_rp": 14.0,
@@ -612,92 +672,110 @@
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #2869",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2869"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #146",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "146"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           }
         ],
         "you_rp": 14.0,
@@ -725,22 +803,26 @@
           {
             "name": "icon #21",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "21"
           },
           {
             "name": "icon #1093",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1093"
           },
           {
             "name": "icon #23",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "23"
           },
           {
             "name": "icon #45",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "45"
           }
         ],
         "you_rp": 14.0,
@@ -761,12 +843,14 @@
           {
             "name": "icon #1973",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1973"
           },
           {
             "name": "icon #1973",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1973"
           }
         ],
         "them_side": [
@@ -794,7 +878,8 @@
           {
             "name": "icon #4072",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4072"
           }
         ],
         "them_side": [
@@ -829,7 +914,8 @@
           {
             "name": "icon #2550",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2550"
           }
         ],
         "you_rp": 11.0,
@@ -850,32 +936,38 @@
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #289",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "289"
           }
         ],
         "them_side": [
@@ -910,32 +1002,38 @@
           {
             "name": "icon #1097",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1097"
           },
           {
             "name": "icon #1226",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1226"
           },
           {
             "name": "icon #120",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "120"
           },
           {
             "name": "icon #4295",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4295"
           },
           {
             "name": "icon #4268",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4268"
           },
           {
             "name": "icon #2865",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2865"
           }
         ],
         "you_rp": 7.4,
@@ -963,7 +1061,8 @@
           {
             "name": "icon #4054",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4054"
           }
         ],
         "you_rp": 7.4,
@@ -991,42 +1090,50 @@
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           },
           {
             "name": "icon #4313",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4313"
           }
         ],
         "you_rp": 7.0,
@@ -1047,7 +1154,8 @@
           {
             "name": "icon #1604",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1604"
           }
         ],
         "them_side": [
@@ -1082,7 +1190,8 @@
           {
             "name": "icon #15",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "15"
           }
         ],
         "you_rp": 6.0,
@@ -1110,22 +1219,26 @@
           {
             "name": "icon #4130",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4130"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #4130",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4130"
           }
         ],
         "you_rp": 4.6,
@@ -1146,27 +1259,32 @@
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           },
           {
             "name": "icon #147",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "147"
           }
         ],
         "them_side": [
@@ -1194,7 +1312,8 @@
           {
             "name": "icon #4218",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4218"
           }
         ],
         "them_side": [
@@ -1222,7 +1341,8 @@
           {
             "name": "icon #1370",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1370"
           }
         ],
         "them_side": [
@@ -1250,12 +1370,14 @@
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           }
         ],
         "them_side": [
@@ -1275,42 +1397,218 @@
         "exact_time": "2026-06-10 08:37:27",
         "fingerprint": "c5649682a7950d392eff",
         "first_seen": "2026-10-29 03:47 UTC"
-      },
+      }
+    ],
+    "ssbd": [
       {
-        "pet": "sugar_axolotl",
-        "source": "amtv",
-        "you_side": [
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
           {
-            "name": "icon #146",
+            "name": "Add Big",
             "badges": "plain",
             "count": 1
           },
           {
-            "name": "icon #146",
+            "name": "Ride A Pet Potion Forever",
             "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Parrot",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Chocolate Chip Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Fairy Bat Dragon",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Winged Tiger",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "R",
+            "count": 2
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Goose",
+            "badges": "FR",
+            "count": 3
+          },
+          {
+            "name": "Cow",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Goose",
+            "badges": "R",
             "count": 1
           }
         ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Maybest9091",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "13s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-e9adc4433ea78ade1e1c",
+        "first_seen": "2026-10-29 05:38 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
         "them_side": [
           {
-            "name": "Sugar Axolotl",
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon Backpack",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon Sticker",
             "badges": "plain",
             "count": 1
           }
         ],
-        "you_rp": 3.2,
-        "them_rp": 4.0,
-        "win_lose": "W by 0.8 RP",
-        "username": "Daniya201301179",
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "JordanTheFenix",
         "lister": null,
-        "status": "Completed",
-        "rel_time": "140 day(s) ago",
-        "exact_time": "2026-06-10 04:39:10",
-        "fingerprint": "331ad01fd069ea22d6e6",
-        "first_seen": "2026-10-29 03:47 UTC"
-      }
-    ],
-    "ssbd": [
+        "status": "offer",
+        "rel_time": "10s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-5448ad3a43e782d2b9a0",
+        "first_seen": "2026-10-29 05:38 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Chip Bat Dragon",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Fairy Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cupid Dragon",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Fairy Bat Dragon",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Vampire Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Aurora Fox",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Snow Owl",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "Cow",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Asteri4",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "14s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-28b2a1033c6c0398bd17",
+        "first_seen": "2026-10-29 05:38 UTC"
+      },
       {
         "pet": "ssbd",
         "source": "elvebredd",
@@ -3182,114 +3480,38 @@
         "split_verified": false,
         "fingerprint": "elve-13ebc4185dfecc98f116",
         "first_seen": "2026-10-29 04:23 UTC"
-      },
+      }
+    ],
+    "monkey_king": [
       {
-        "pet": "ssbd",
+        "pet": "monkey_king",
         "source": "elvebredd",
         "you_side": [
           {
-            "name": "Add",
+            "name": "Monkey King",
             "badges": "plain",
             "count": 1
           }
         ],
         "them_side": [
           {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
+            "name": "Monkey King Crown",
+            "badges": "plain",
             "count": 1
           }
         ],
         "you_rp": null,
         "them_rp": null,
         "win_lose": null,
-        "username": "lindy",
+        "username": "JordanTheFenix",
         "lister": null,
         "status": "offer",
-        "rel_time": "24s ago",
+        "rel_time": "13s ago",
         "exact_time": null,
         "split_verified": true,
-        "fingerprint": "elve-11f5384254c9fa66abb4",
-        "first_seen": "2026-10-29 04:23 UTC"
+        "fingerprint": "elve-d8a1f00ad7aacdfb3cca",
+        "first_seen": "2026-10-29 05:38 UTC"
       },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #17",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #17",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #49",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #147",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 47.0,
-        "win_lose": "W by 3 RP",
-        "username": "Justanormalone",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "12 minute(s) ago",
-        "exact_time": "2026-10-29 01:10:07",
-        "fingerprint": "b567d8bde293bbc3119c",
-        "first_seen": "2026-10-29 05:22 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #1863",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #1867",
-            "badges": "R",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 46.0,
-        "win_lose": "W by 2 RP",
-        "username": "VaporeonxD",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "7 minute(s) ago",
-        "exact_time": "2026-10-28 23:40:16",
-        "fingerprint": "969405faa2bd2372cbe2",
-        "first_seen": "2026-10-29 03:47 UTC"
-      }
-    ],
-    "monkey_king": [
       {
         "pet": "monkey_king",
         "source": "elvebredd",
@@ -3391,7 +3613,8 @@
           {
             "name": "icon #1827",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1827"
           }
         ],
         "you_rp": 34.0,
@@ -3419,22 +3642,26 @@
           {
             "name": "icon #60",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "60"
           },
           {
             "name": "icon #60",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "60"
           },
           {
             "name": "icon #4397",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4397"
           },
           {
             "name": "icon #4397",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4397"
           }
         ],
         "you_rp": 34.0,
@@ -3455,12 +3682,14 @@
           {
             "name": "icon #39",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "39"
           },
           {
             "name": "icon #309",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "309"
           }
         ],
         "them_side": [
@@ -3495,7 +3724,8 @@
           {
             "name": "icon #4067",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4067"
           }
         ],
         "you_rp": 34.0,
@@ -3523,7 +3753,8 @@
           {
             "name": "icon #39",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "39"
           }
         ],
         "you_rp": 34.0,
@@ -3551,32 +3782,38 @@
           {
             "name": "icon #1736",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1736"
           },
           {
             "name": "icon #1736",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1736"
           },
           {
             "name": "icon #1736",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1736"
           },
           {
             "name": "icon #1736",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1736"
           },
           {
             "name": "icon #146",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "146"
           },
           {
             "name": "icon #49",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "49"
           }
         ],
         "you_rp": 34.0,
@@ -3597,12 +3834,14 @@
           {
             "name": "icon #20",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "20"
           },
           {
             "name": "icon #20",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "20"
           }
         ],
         "them_side": [
@@ -3630,12 +3869,14 @@
           {
             "name": "icon #4072",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4072"
           },
           {
             "name": "icon #4072",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4072"
           }
         ],
         "them_side": [
@@ -3670,47 +3911,56 @@
           {
             "name": "icon #43",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "43"
           },
           {
             "name": "icon #3098",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "3098"
           },
           {
             "name": "icon #1018",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1018"
           },
           {
             "name": "icon #4119",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4119"
           },
           {
             "name": "icon #4046",
             "badges": "M",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4046"
           },
           {
             "name": "icon #4365",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4365"
           },
           {
             "name": "icon #4365",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4365"
           },
           {
             "name": "icon #4365",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4365"
           },
           {
             "name": "icon #4365",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4365"
           }
         ],
         "you_rp": 32.0,
@@ -3731,7 +3981,8 @@
           {
             "name": "icon #16",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "16"
           }
         ],
         "them_side": [
@@ -3766,12 +4017,14 @@
           {
             "name": "icon #1863",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1863"
           },
           {
             "name": "icon #2460",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2460"
           }
         ],
         "you_rp": 32.0,
@@ -3799,12 +4052,14 @@
           {
             "name": "icon #14",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "14"
           },
           {
             "name": "icon #91",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "91"
           }
         ],
         "you_rp": 32.0,
@@ -3825,37 +4080,44 @@
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #128",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "128"
           },
           {
             "name": "icon #146",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "146"
           }
         ],
         "them_side": [
@@ -3890,17 +4152,20 @@
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           },
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           },
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           }
         ],
         "you_rp": 32.0,
@@ -3928,22 +4193,26 @@
           {
             "name": "icon #4370",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4370"
           },
           {
             "name": "icon #4370",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4370"
           },
           {
             "name": "icon #4370",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4370"
           },
           {
             "name": "icon #4370",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4370"
           }
         ],
         "you_rp": 32.0,
@@ -3971,17 +4240,20 @@
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           },
           {
             "name": "icon #4350",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           },
           {
             "name": "icon #4350",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4350"
           }
         ],
         "you_rp": 32.0,
@@ -4009,7 +4281,8 @@
           {
             "name": "icon #1323",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1323"
           }
         ],
         "you_rp": 30.0,
@@ -4037,47 +4310,56 @@
           {
             "name": "icon #962",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "962"
           },
           {
             "name": "icon #141",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "141"
           },
           {
             "name": "icon #2712",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2712"
           },
           {
             "name": "icon #4364",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4364"
           },
           {
             "name": "icon #2077",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2077"
           },
           {
             "name": "icon #2840",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2840"
           },
           {
             "name": "icon #4331",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4331"
           },
           {
             "name": "icon #2493",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2493"
           },
           {
             "name": "icon #2788",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "2788"
           }
         ],
         "you_rp": 30.0,
@@ -4105,12 +4387,14 @@
           {
             "name": "icon #1863",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1863"
           },
           {
             "name": "icon #3091",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "3091"
           }
         ],
         "you_rp": 30.0,
@@ -4138,57 +4422,68 @@
           {
             "name": "icon #14",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "14"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           },
           {
             "name": "icon #4340",
             "badges": "plain",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4340"
           }
         ],
         "you_rp": 30.0,
@@ -4216,37 +4511,44 @@
           {
             "name": "icon #3093",
             "badges": "N",
-            "count": 1
+            "count": 1,
+            "amtv_id": "3093"
           },
           {
             "name": "icon #31",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "31"
           },
           {
             "name": "icon #51",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "51"
           },
           {
             "name": "icon #54",
             "badges": "NFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "54"
           },
           {
             "name": "icon #1219",
             "badges": "MR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1219"
           },
           {
             "name": "icon #1369",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "1369"
           },
           {
             "name": "icon #79",
             "badges": "NR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "79"
           }
         ],
         "you_rp": 26.4,
@@ -4274,7 +4576,8 @@
           {
             "name": "icon #39",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "39"
           }
         ],
         "you_rp": 26.4,
@@ -4302,7 +4605,8 @@
           {
             "name": "icon #19",
             "badges": "FR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "19"
           }
         ],
         "you_rp": 26.0,
@@ -4330,7 +4634,8 @@
           {
             "name": "icon #4322",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "4322"
           }
         ],
         "you_rp": 26.4,
@@ -4351,7 +4656,8 @@
           {
             "name": "icon #53",
             "badges": "MFR",
-            "count": 1
+            "count": 1,
+            "amtv_id": "53"
           }
         ],
         "them_side": [
@@ -4386,7 +4692,8 @@
           {
             "name": "icon #39",
             "badges": "R",
-            "count": 1
+            "count": 1,
+            "amtv_id": "39"
           }
         ],
         "you_rp": 24.4,
@@ -4398,119 +4705,6 @@
         "rel_time": "80 day(s) ago",
         "exact_time": "2026-08-09 03:29:38",
         "fingerprint": "dd818473260a6b3fcf1e",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "monkey_king",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4268",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Monkey King",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "you_rp": 18.0,
-        "them_rp": 18.4,
-        "win_lose": "W by 0.4 RP",
-        "username": "JCarlos3Ds",
-        "lister": null,
-        "status": "Completed",
-        "rel_time": "116 day(s) ago",
-        "exact_time": "2026-07-04 01:39:48",
-        "fingerprint": "cd22f64a4679c8a69794",
         "first_seen": "2026-10-29 03:47 UTC"
       }
     ]
