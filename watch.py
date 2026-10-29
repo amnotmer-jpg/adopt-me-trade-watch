@@ -218,6 +218,14 @@ def parse_amtv_snapshot(snap_html, pet_key):
         fingerprint_src = json.dumps(
             [pet_key, exact_time or rel_time, you_side, them_side,
              username, status], sort_keys=True)
+        # Attach the AMTV item id AFTER fingerprinting so existing rows keep
+        # their fingerprints (no re-notification spam). "icon #1588" links to
+        # adoptmetradingvalues.com/what-is-worth/1588 on the dashboard.
+        for _side in (you_side, them_side):
+            for _e in _side:
+                _m = re.match(r"icon #(\d+)$", _e["name"])
+                if _m:
+                    _e["amtv_id"] = _m.group(1)
         records.append({
             "pet": pet_key,
             "source": "amtv",
@@ -380,7 +388,10 @@ function sideHtml(side){
   if(!side||!side.length) return "<i>—</i>";
   return side.map(it=>{
     const b=it.badges==="plain"?"plain":it.badges;
-    return it.name+" ("+b+")"+(it.count>1?" ×"+it.count:"");
+    const label=it.amtv_id
+      ?"<a href='https://adoptmetradingvalues.com/what-is-worth/"+it.amtv_id+"' target='_blank'>"+it.name+"</a>"
+      :it.name;
+    return label+" ("+b+")"+(it.count>1?" ×"+it.count:"");
   }).join(", ");
 }
 function render(){
