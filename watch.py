@@ -90,6 +90,9 @@ ELVEBREDD_TRADE_CENTER = "https://elvebredd.com/trade-center"
 
 REQUEST_DELAY = 2.0   # seconds between requests, keeps the cadence polite
 RECENT_KEEP = 30      # recent items per pet kept for the dashboard
+RECENT_SHOW = 10      # recent items per pet actually shown (older ones
+                      # stay in storage as a dedupe buffer, but no longer
+                      # clutter the dashboard)
 
 BLOCKED = set()       # sites stopped this run after a 429/403
 
@@ -654,7 +657,7 @@ def main():
 
         # First run seeds silently: nothing counts as "new" yet.
         new_cards = [] if first_run else amtvs_to_cards(new_records)
-        recent_cards = amtvs_to_cards(recent)
+        recent_cards = amtvs_to_cards(recent)[:RECENT_SHOW]
         if not first_run and new_cards:
             notify_lines.append((pet["name"], len(new_cards)))
         dashboard_pets.append({
