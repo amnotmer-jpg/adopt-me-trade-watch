@@ -334,11 +334,15 @@ trade, one per line, e.g. <code>FR Crow</code>,
 browser's localStorage — it is never sent anywhere and never appears in the
 page source. Cards whose <b>You</b> side you can fill exactly get a green
 ★ MATCH highlight. Badges must match exactly (a plain pet does not fill an
-FR ask, and 2× FR does not fill from 1× FR).
+FR ask, and 2× FR does not fill from 1× FR). A match only ever comes
+from the You side (what you'd give), never from the Them side (what's
+offered) — plain, FR, MFR and the rest are all different to the matcher.
 <br><textarea id="inv" placeholder="FR Crow&#10;Turtle&#10;Ride Potion x2"></textarea>
 <br><button onclick="saveInv()">Save inventory</button>
 <button onclick="clearInv()">Clear</button>
-<span id="invStatus" class="meta"></span></div>
+<span id="invStatus" class="meta"></span>
+<br><label><input type="checkbox" id="onlyMine" onclick="toggleOnlyMine()"> For me only — show just cards whose You side I can fill exactly</label>
+<span id="onlyMineHint" class="meta"></span></div>
 
 <div id="sections"></div>
 
@@ -394,11 +398,40 @@ function sideHtml(side){
     return label+" ("+b+")"+(it.count>1?" ×"+it.count:"");
   }).join(", ");
 }
+// A card is "for me" only when its You side (what you'd give) is exactly
+// covered by inventory. The Them side (what's offered) never counts, and
+// badges must match exactly: plain, FR, MFR etc. are all different.
+function youSideOf(it){
+  return (it.you_side||[]).map(s=>({name:s.name,badges:s.badges,count:s.count||1}));
+}
+function isForMe(it, inv){
+  return it.status!=="Completed" && isMatch(youSideOf(it), inv);
+}
+function toggleOnlyMine(){
+  try{localStorage.setItem("amw-only-mine", document.getElementById("onlyMine").checked?"1":"0");}catch(e){}
+  render();
+}
 function render(){
   const data=JSON.parse(document.getElementById("watch-data").textContent);
   const inv=getInv();
   document.getElementById("inv").value=inv.map(it=>
     (it.badges==="plain"?"":it.badges+" ")+it.name+(it.count>1?" x"+it.count:"")).join("\n");
+  const cb=document.getElementById("onlyMine");
+  let onlyMine=false;
+  if(cb){
+    let pref=null; try{pref=localStorage.getItem("amw-only-mine");}catch(e){}
+    onlyMine = pref!==null ? pref==="1" : inv.length>0;
+    if(!inv.length) onlyMine=false;
+    cb.checked=onlyMine;
+    document.getElementById("onlyMineHint").textContent =
+      inv.length ? "" : "Save your inventory above to use For me only.";
+  }
+  function sectionHtml(items){
+    const enriched=items.map(it=>({it, mine:isForMe(it, inv)}));
+    enriched.sort((a,b)=>(b.mine-a.mine));
+    const shown=(onlyMine&&inv.length)?enriched.filter(e=>e.mine):enriched;
+    return {html: shown.map(e=>cardHtml(e.it)).join(""), shown: shown.length, total: items.length};
+  }
   let out="";
   for(const pet of data.pets){
     out+="<h2>"+pet.name+"</h2>";
@@ -407,16 +440,17 @@ function render(){
       ", neon "+(pet.elvebredd.neon??"—")+", mega "+(pet.elvebredd.mega??"—")+
       "<br>AMTV check: "+pet.amtv_status+" · Elvebredd feed: "+pet.elvebredd_status+"</p>";
     if(pet.new_items.length){
-      out+="<h3>New this check ("+pet.new_items.length+")</h3>";
-      out+=pet.new_items.map(cardHtml).join("");
+      const s=sectionHtml(pet.new_items);
+      out+="<h3>New this check"+(onlyMine&&inv.length?" — for you ("+s.shown+" of "+s.total+")":" ("+s.total+")")+"</h3>";
+      out+=s.html||"<p class='meta'>Nothing for you in this check.</p>";
     }
-    out+="<h3>Recent ("+pet.recent_items.length+")</h3>";
-    out+=pet.recent_items.length?pet.recent_items.map(cardHtml).join(""):"<p class='meta'>None yet.</p>";
+    const r=sectionHtml(pet.recent_items);
+    out+="<h3>Recent"+(onlyMine&&inv.length?" — for you ("+r.shown+" of "+r.total+")":" ("+r.total+")")+"</h3>";
+    out+=r.html||"<p class='meta'>None yet.</p>";
   }
   function cardHtml(it){
-    const youSide=(it.you_side||[]).map(s=>({name:s.name,badges:s.badges,count:s.count||1}));
     const actionable=it.status!=="Completed";
-    const cls=(actionable&&isMatch(youSide,inv))?"card match":"card";
+    const cls=(actionable&&isMatch(youSideOf(it),inv))?"card match":"card";
     const src=it.source==="amtv"?"AMTV":"Elvebredd";
     const when=it.exact_time||it.rel_time||it.first_seen||"";
     return "<div class='"+cls+"'><span class='badge "+(it.source==="amtv"?"amtv":"elve")+"'>"+src+
@@ -448,6 +482,15 @@ def amtvs_to_cards(records):
     """
     cards = []
     for r in records:
+        # Backfill AMTV item ids for stored rows parsed before the link
+        # change: "icon #1588" -> amtv_id "1588", so old rows link too.
+        # Fingerprints are unaffected (computed at parse time, not here).
+        for _side in (r["you_side"], r["them_side"]):
+            for _e in _side:
+                if "amtv_id" not in _e:
+                    _m = re.match(r"icon #(\d+)$", _e["name"])
+                    if _m:
+                        _e["amtv_id"] = _m.group(1)
         note = None
         if r["win_lose"]:
             note = f"Offer vs listed value: {r['win_lose']}"
