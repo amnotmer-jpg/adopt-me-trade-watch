@@ -32,6 +32,7 @@
       "ec622e70c292144a7c60",
       "ed7624171b05df01b77a",
       "elve-099ed860e9736a645083",
+      "elve-331f839d0aec4a254232",
       "f5b196091b66d611f559",
       "f8e17c81fa493f9decee",
       "fb2504c27b4972a5a9fe"
@@ -54,7 +55,6 @@
       "3b1e860b0e8a60109f66",
       "3f5706bb6101056df0d3",
       "4acf3902c46e8101ed4e",
-      "5cebd4541722dce35659",
       "5d5660a42ef8e26ac562",
       "5fbd65f35064b7bd3d0e",
       "69edec1644d89c3f3ea2",
@@ -66,6 +66,7 @@
       "969405faa2bd2372cbe2",
       "972dac7cd1cb51292311",
       "9cfae70ecd8004f31873",
+      "b567d8bde293bbc3119c",
       "b678878d37cb1aca029d",
       "b8a8bd5637e9e2fbdd7d",
       "bdfd1bb9b3bc307b2f58",
@@ -73,12 +74,24 @@
       "ca72241b5b5950c1b74b",
       "d1298d2e5ae46223f176",
       "elve-11f5384254c9fa66abb4",
+      "elve-13809d7870acbafee80d",
       "elve-13ebc4185dfecc98f116",
+      "elve-204446da1724c82b58ed",
+      "elve-447e20d701b4793165ff",
+      "elve-47de15db2ac4691c4407",
+      "elve-4b54c56269d04e2d4b33",
+      "elve-525c66b176162bf74c18",
       "elve-551cd76fcdd8092e0d2f",
       "elve-624e89126b16f6b9a161",
+      "elve-66aac1e7868ea189a33d",
+      "elve-a4c2a076fc69cdee66f4",
       "elve-adee9857ab1b00636e65",
+      "elve-bd830cfb9729e4508b9b",
       "elve-c715e66aa9798f2acb71",
+      "elve-dfda5be6212ad89477f1",
+      "elve-ef96809a771a13aabe0b",
       "elve-f69f52bfc9ebfcbf4d8f",
+      "elve-ff8f05ebbe219195d740",
       "f0bbd77e31173cf20a5b"
     ],
     "monkey_king": [
@@ -108,12 +121,36 @@
       "de2acfb5f514127b7653",
       "e22494f140c940cd5f1a",
       "elve-391218fe94c3d4b08c7a",
+      "elve-751a1f322f42c364f8b0",
       "f592d9a2eb89d4ec91be",
       "f61194def697aa389e3a"
     ]
   },
   "records": {
     "sugar_axolotl": [
+      {
+        "pet": "sugar_axolotl",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Sugar Axolotl",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Mika__",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "8s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-331f839d0aec4a254232",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
       {
         "pet": "sugar_axolotl",
         "source": "elvebredd",
@@ -1265,42 +1302,1230 @@
         "exact_time": "2026-06-03 13:54:37",
         "fingerprint": "218e9bacf7ee1d4448b4",
         "first_seen": "2026-10-29 03:47 UTC"
+      }
+    ],
+    "ssbd": [
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "15s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-ff8f05ebbe219195d740",
+        "first_seen": "2026-10-29 05:22 UTC"
       },
       {
-        "pet": "sugar_axolotl",
-        "source": "amtv",
-        "you_side": [
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
           {
-            "name": "icon #146",
+            "name": "Add",
             "badges": "plain",
             "count": 1
           },
           {
-            "name": "icon #146",
+            "name": "Add Big",
             "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Paddle Ball Rattle",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Ride A Pet Potion Forever",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
             "count": 1
           }
         ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "21s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-ef96809a771a13aabe0b",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
         "them_side": [
           {
-            "name": "Sugar Axolotl",
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Tortle",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "11s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-dfda5be6212ad89477f1",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Paddle Ball Rattle",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Fly A Pet Potion Forever",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "19s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-bd830cfb9729e4508b9b",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "23s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-a4c2a076fc69cdee66f4",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon Backpack",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon Sticker",
             "badges": "plain",
             "count": 1
           }
         ],
-        "you_rp": 3.2,
-        "them_rp": 4.0,
-        "win_lose": "W by 0.8 RP",
-        "username": "BlitzStats",
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Mika__",
         "lister": null,
-        "status": "Completed",
-        "rel_time": "166 day(s) ago",
-        "exact_time": "2026-05-15 19:36:49",
-        "fingerprint": "068c0500eb48bb1729a1",
-        "first_seen": "2026-10-29 03:47 UTC"
-      }
-    ],
-    "ssbd": [
+        "status": "offer",
+        "rel_time": "11s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-66aac1e7868ea189a33d",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Chocolate Chip Bat Dragon",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Christmas Pudding Pup",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Candicorn",
+            "badges": "MFR",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Arondien08",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "14s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-525c66b176162bf74c18",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Candyfloss Chick",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Cocoadile",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "25s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-4b54c56269d04e2d4b33",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Frost Unicorn",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "27s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-47de15db2ac4691c4407",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "plain",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "17s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-447e20d701b4793165ff",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Add",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Big",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Add Small",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cow",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Albino Monkey",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Munchkin Cat",
+            "badges": "N",
+            "count": 1
+          },
+          {
+            "name": "Peppermint Penguin",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Cabbit",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bush Elephant",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Pig",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Siamese Cat",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "French Bulldog",
+            "badges": "MR",
+            "count": 1
+          },
+          {
+            "name": "Kangaroo",
+            "badges": "FR",
+            "count": 2
+          },
+          {
+            "name": "Hyena",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Starfish",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Samoyed",
+            "badges": "M",
+            "count": 1
+          },
+          {
+            "name": "Slime",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Chocolate Dutch Guinea Pig",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "St Bernard",
+            "badges": "N",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "wauzji",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "13s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-204446da1724c82b58ed",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "elvebredd",
+        "you_side": [],
+        "them_side": [
+          {
+            "name": "Dalmatian",
+            "badges": "MFR",
+            "count": 1
+          },
+          {
+            "name": "Arctic Reindeer",
+            "badges": "NFR",
+            "count": 1
+          },
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "Bat Dragon",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Arondien08",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "16s ago",
+        "exact_time": null,
+        "split_verified": false,
+        "fingerprint": "elve-13809d7870acbafee80d",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
       {
         "pet": "ssbd",
         "source": "elvebredd",
@@ -1547,6 +2772,49 @@
         "split_verified": true,
         "fingerprint": "elve-11f5384254c9fa66abb4",
         "first_seen": "2026-10-29 04:23 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "icon #17",
+            "badges": "FR",
+            "count": 1
+          },
+          {
+            "name": "icon #17",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "icon #49",
+            "badges": "R",
+            "count": 1
+          },
+          {
+            "name": "icon #147",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "you_rp": 44.0,
+        "them_rp": 47.0,
+        "win_lose": "W by 3 RP",
+        "username": "Justanormalone",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "12 minute(s) ago",
+        "exact_time": "2026-10-29 01:10:07",
+        "fingerprint": "b567d8bde293bbc3119c",
+        "first_seen": "2026-10-29 05:22 UTC"
       },
       {
         "pet": "ssbd",
@@ -1977,628 +3245,38 @@
         "exact_time": "2026-10-28 16:36:34",
         "fingerprint": "027a5ee9728b65054269",
         "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #60",
-            "badges": "MFR",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 64.0,
-        "win_lose": "W by 20 RP",
-        "username": "AlexIvanov",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "7 hour(s) ago",
-        "exact_time": "2026-10-28 16:08:49",
-        "fingerprint": "12049da1cb812fc4479b",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #2550",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #1863",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #1602",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 49.0,
-        "win_lose": "W by 5 RP",
-        "username": "Drrgrdgxzyup",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "9 hour(s) ago",
-        "exact_time": "2026-10-28 14:23:32",
-        "fingerprint": "3f5706bb6101056df0d3",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #1862",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #1862",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #1862",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #1862",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #1862",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 51.0,
-        "win_lose": "W by 7 RP",
-        "username": "IQIWJAHANAJ",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "9 hour(s) ago",
-        "exact_time": "2026-10-28 14:18:25",
-        "fingerprint": "929fb0513353e51c6dcc",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "icon #2524",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #146",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "you_rp": 66.0,
-        "them_rp": 44.0,
-        "win_lose": "L by 22 RP",
-        "username": "ExpertBaconXL",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "11 hour(s) ago",
-        "exact_time": "2026-10-28 12:05:05",
-        "fingerprint": "94f2b0c8a61db807ddd3",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #1928",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #147",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #147",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 45.0,
-        "win_lose": "W by 1 RP",
-        "username": "Bradthechad09",
-        "lister": "Mommabear0919",
-        "status": "Completed",
-        "rel_time": "12 hour(s) ago",
-        "exact_time": "2026-10-28 11:47:38",
-        "fingerprint": "212cfefde7435e1e5ea5",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #2524",
-            "badges": "R",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 64.0,
-        "win_lose": "W by 20 RP",
-        "username": "DaMattRBLX",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "12 hour(s) ago",
-        "exact_time": "2026-10-28 11:29:21",
-        "fingerprint": "5fbd65f35064b7bd3d0e",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #39",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #1974",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #1069",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #146",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 43.0,
-        "win_lose": "L by 1 RP",
-        "username": "Yexiwu",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "13 hour(s) ago",
-        "exact_time": "2026-10-28 10:23:31",
-        "fingerprint": "755a3423bb8688195018",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #2492",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4308",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4350",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4061",
-            "badges": "M",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 45.0,
-        "win_lose": "W by 1 RP",
-        "username": "SIeepyGek0YT",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "16 hour(s) ago",
-        "exact_time": "2026-10-28 07:26:43",
-        "fingerprint": "1f10e91a8414168efa2a",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #4350",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #46",
-            "badges": "MFR",
-            "count": 1
-          },
-          {
-            "name": "icon #4372",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #1017",
-            "badges": "F",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 29.1,
-        "win_lose": "L by 14.9 RP",
-        "username": "habitmademedo1t",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "20 hour(s) ago",
-        "exact_time": "2026-10-28 03:40:40",
-        "fingerprint": "bdfd1bb9b3bc307b2f58",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #16",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #60",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #1370",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #139",
-            "badges": "NFR",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #1219",
-            "badges": "N",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2713",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4368",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4368",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4368",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4368",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #4368",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 54.0,
-        "win_lose": "W by 10 RP",
-        "username": "Randy838661",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "23 hour(s) ago",
-        "exact_time": "2026-10-28 00:07:09",
-        "fingerprint": "4acf3902c46e8101ed4e",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #81",
-            "badges": "NFR",
-            "count": 1
-          },
-          {
-            "name": "icon #1959",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #2021",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #1201",
-            "badges": "NR",
-            "count": 1
-          },
-          {
-            "name": "icon #103",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #960",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #2078",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #1476",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #1227",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #959",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #43",
-            "badges": "NFR",
-            "count": 1
-          },
-          {
-            "name": "icon #146",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #147",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #146",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 45.0,
-        "win_lose": "W by 1 RP",
-        "username": "Rosebella6",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "23 hour(s) ago",
-        "exact_time": "2026-10-27 23:55:15",
-        "fingerprint": "8898942a9b1149b28c5b",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #4054",
-            "badges": "NFR",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 56.0,
-        "win_lose": "W by 12 RP",
-        "username": "Jhoendry06",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "1 day(s) ago",
-        "exact_time": "2026-10-27 22:50:05",
-        "fingerprint": "2150402988fedb2cef70",
-        "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "icon #39",
-            "badges": "FR",
-            "count": 1
-          },
-          {
-            "name": "icon #64",
-            "badges": "R",
-            "count": 1
-          },
-          {
-            "name": "icon #69",
-            "badges": "plain",
-            "count": 1
-          },
-          {
-            "name": "icon #67",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 38.0,
-        "win_lose": "L by 6 RP",
-        "username": "LaurHasDied",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "1 day(s) ago",
-        "exact_time": "2026-10-27 22:36:27",
-        "fingerprint": "b8a8bd5637e9e2fbdd7d",
-        "first_seen": "2026-10-29 03:47 UTC"
       }
     ],
     "monkey_king": [
+      {
+        "pet": "monkey_king",
+        "source": "elvebredd",
+        "you_side": [
+          {
+            "name": "Monkey King",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Monkey King Crown",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "you_rp": null,
+        "them_rp": null,
+        "win_lose": null,
+        "username": "Mika__",
+        "lister": null,
+        "status": "offer",
+        "rel_time": "14s ago",
+        "exact_time": null,
+        "split_verified": true,
+        "fingerprint": "elve-751a1f322f42c364f8b0",
+        "first_seen": "2026-10-29 05:22 UTC"
+      },
       {
         "pet": "monkey_king",
         "source": "elvebredd",
