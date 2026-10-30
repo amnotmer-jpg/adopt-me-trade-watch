@@ -36,6 +36,18 @@ Extraction strategy (tolerant, because the site's class names change):
      (alphanumeric + underscore, not a number, not "You", not "Add").
      Relative time: the first "…ago" string in the card.
 
+Substring-fragment guard: Elvebredd's search matches by substring, so
+searching "Monkey King" also matches "Monkey King Crown", and the
+search hides the listing's non-matching items. A card that renders
+under that search as exactly "pet alone" on one side and only
+"pet + extra words" items on the other is a fragment of a bigger
+listing (verified Oct 2026: 7 such Monkey King / Monkey King Crown
+cards were fragments of listings that also involved Sugar Axolotls),
+not a real offer — so search-path cards matching that shape are
+dropped and counted in the status. The search flow also tries to
+click the site's exact item chip (role=option, exact name) before
+extracting, falling back to the text search when no such chip exists.
+
 Scope: first page of cards only (the same scope the Muse browser watch
 used). No scrolling, no pagination, no login, no posting, no trading.
 
@@ -193,9 +205,35 @@ EXTRACT_JS = r"""
 """
 
 
-def _raw_to_records(raw_cards, pet_key, pet_name):
-    """Filter raw cards to one pet and convert to watch.py records."""
+def _is_substring_fragment(you_side, them_side, pet_name):
+    """True for the phantom shape: one side is exactly the tracked
+    pet alone, and the other side holds ONLY items whose names are
+    the pet name plus extra words (e.g. "Monkey King Crown" for
+    "Monkey King"). Such cards arrive through Elvebredd's substring
+    search, which hides the listing's non-matching items, so the
+    rendered card is a fragment of the real listing, not the listing
+    itself. Genuine pure pet-for-extended-item offers match too and
+    are dropped deliberately: they are junk lowballs (Crown 3.25 vs
+    Monkey King no-pot 67 on Elvebredd) and keeping them misleads
+    the dashboard."""
+    prefix = pet_name.lower() + " "
+    for alone, other in ((you_side, them_side), (them_side, you_side)):
+        if (len(alone) == 1 and alone[0]["name"] == pet_name
+                and other
+                and all(e["name"].lower().startswith(prefix)
+                        for e in other)):
+            return True
+    return False
+
+
+def _raw_to_records(raw_cards, pet_key, pet_name, from_search=False):
+    """Filter raw cards to one pet and convert to watch.py records.
+    Returns (records, dropped): dropped counts search-path cards
+    discarded by the substring-fragment rule. The rule applies only
+    to the search path, where the site hides non-matching items;
+    unfiltered-path cards are complete and are never dropped."""
     records = []
+    dropped = 0
     for raw in raw_cards:
         clusters = raw["clusters"]
         if not clusters:
@@ -216,6 +254,10 @@ def _raw_to_records(raw_cards, pet_key, pet_name):
                         for e in you_side + them_side)
         if not mentioned:
             continue
+        if from_search and _is_substring_fragment(you_side, them_side,
+                                                  pet_name):
+            dropped += 1
+            continue
         records.append({
             "pet": pet_key,
             "source": "elvebredd",
@@ -233,7 +275,7 @@ def _raw_to_records(raw_cards, pet_key, pet_name):
             "fingerprint": _fingerprint(pet_key, raw["username"],
                                         you_side, them_side),
         })
-    return records
+    return records, dropped
 
 
 def _find_search_box(page):
@@ -289,35 +331,59 @@ def fetch_elvebredd_browser(pet_names, wait_s=4.0):
                 search = _find_search_box(page)
                 if search is not None:
                     # Filtered path: one search per pet.
+                    method = "search-text"
+                    total_dropped = 0
                     for key, name in pet_names.items():
                         try:
                             search.fill("")
                             search.fill(name)
+                            page.wait_for_timeout(1500)
+                            # Prefer the site's exact item chip over
+                            # its substring text search: typing
+                            # "Monkey King" also matches
+                            # "Monkey King Crown". Only click a
+                            # proper option element with the exact
+                            # name; otherwise keep the text search.
+                            try:
+                                chip = page.get_by_role(
+                                    "option", name=name,
+                                    exact=True).first
+                                if chip.is_visible(timeout=2000):
+                                    chip.click()
+                                    method = "search-chip"
+                                    page.wait_for_timeout(2000)
+                            except Exception:
+                                pass
                             page.wait_for_timeout(3000)
                             raw = page.evaluate(EXTRACT_JS)
-                            result["cards"][key] = _raw_to_records(
-                                raw, key, name)
+                            recs, dropped = _raw_to_records(
+                                raw, key, name, from_search=True)
+                            result["cards"][key] = recs
+                            total_dropped += dropped
                         except Exception as exc:
                             print(f"[elvebredd browser] {key} search "
                                   f"failed: {type(exc).__name__}")
                     total = sum(len(v)
                                 for v in result["cards"].values())
                     if total:
-                        result["method"] = "search-filter"
+                        result["method"] = method
                         result["status"] = (
-                            f"browser ok ({total} cards via search)")
+                            f"browser ok ({total} cards via {method}; "
+                            f"dropped {total_dropped} substring-"
+                            f"fragment cards)")
                     else:
                         result["method"] = "search-filter-empty"
                         result["status"] = (
                             "browser loaded but search filtering "
                             "yielded no cards — falling back")
                         search = None  # fall through to unfiltered
-                if search is None and result["method"] != "search-filter":
+                if search is None:
                     # Unfiltered path: one extraction, client-side filter.
                     raw = page.evaluate(EXTRACT_JS)
                     for key, name in pet_names.items():
-                        result["cards"][key] = _raw_to_records(
-                            raw, key, name)
+                        recs, _ = _raw_to_records(raw, key, name,
+                                                  from_search=False)
+                        result["cards"][key] = recs
                     total = sum(len(v)
                                 for v in result["cards"].values())
                     result["method"] = "unfiltered+client-filter"

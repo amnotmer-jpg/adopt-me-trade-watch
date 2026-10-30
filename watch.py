@@ -558,6 +558,29 @@ def amtvs_to_cards(records):
     return cards
 
 
+def _is_substring_fragment(rec, pet_name):
+    """True for the phantom shape in stored Elvebredd rows: one side
+    is exactly the tracked pet alone, and the other side holds ONLY
+    items whose names are the pet name plus extra words (e.g.
+    "Monkey King Crown" for "Monkey King"). Such rows are search
+    fragments (see elvebredd_browser.py), not real offers, so they
+    are kept out of the dashboard's new/recent lists. Genuine pure
+    pet-for-extended-item offers match too and are hidden
+    deliberately: they are junk lowballs and keeping them misleads
+    the dashboard. AMTV rows are never affected."""
+    if rec.get("source") != "elvebredd":
+        return False
+    prefix = pet_name.lower() + " "
+    sides = (rec.get("you_side") or [], rec.get("them_side") or [])
+    for alone, other in (sides, (sides[1], sides[0])):
+        if (len(alone) == 1 and alone[0].get("name") == pet_name
+                and other
+                and all((e.get("name") or "").lower().startswith(prefix)
+                        for e in other)):
+            return True
+    return False
+
+
 # ---------------------------------------------------------------- main
 
 def load_seen():
@@ -659,12 +682,18 @@ def main():
                 new_records.append(rec)
         # Keep the newest RECENT_KEEP records (snapshot order = newest
         # first) merged with previously seen ones, newest first.
+        # Substring-fragment Elvebredd rows (phantom cards) are kept
+        # out of the recent list, which also purges already-stored
+        # ones from seen.json on the next run; their fingerprints
+        # stay in the fingerprint set, so a re-scraped fragment
+        # never counts as new.
         merged = {r["fingerprint"]: r for r in
                   seen["records"].get(key, [])}
         for rec in all_records:
             merged.setdefault(rec["fingerprint"], rec)
         recent = sorted(
-            merged.values(),
+            [r for r in merged.values()
+             if not _is_substring_fragment(r, pet["name"])],
             key=lambda r: (r.get("exact_time") or r.get("first_seen")
                            or "", r["fingerprint"]),
             reverse=True)[:RECENT_KEEP]
@@ -673,7 +702,9 @@ def main():
         seen["records"][key] = recent
 
         # First run seeds silently: nothing counts as "new" yet.
-        new_cards = [] if first_run else amtvs_to_cards(new_records)
+        new_cards = [] if first_run else amtvs_to_cards(
+            [r for r in new_records
+             if not _is_substring_fragment(r, pet["name"])])
         recent_cards = amtvs_to_cards(recent)[:RECENT_SHOW]
         if not first_run and new_cards:
             notify_lines.append((pet["name"], len(new_cards)))
