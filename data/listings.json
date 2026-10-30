@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30 07:22 UTC",
+  "generated_at": "2026-10-30 07:35 UTC",
   "pets": [
     {
       "key": "sugar_axolotl",
@@ -12,30 +12,8 @@
         "mega": 198.0
       },
       "amtv_status": "page ok; snapshot ok (33 rows)",
-      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (2 cards via search-text; dropped 1 substring-fragment cards)",
-      "new_items": [
-        {
-          "source": "elvebredd",
-          "you_side": [],
-          "them_side": [
-            {
-              "name": "Sugar Axolotl",
-              "badges": "plain",
-              "count": 1
-            }
-          ],
-          "username": "Menu",
-          "lister": null,
-          "status": "offer",
-          "rel_time": null,
-          "exact_time": null,
-          "you_rp": null,
-          "them_rp": null,
-          "note": "split unverified \u2014 sides may be swapped",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "elve-5f9a7ab0dd9d2f1bfa80"
-        }
-      ],
+      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (0 cards, unfiltered feed)",
+      "new_items": [],
       "recent_items": [
         {
           "source": "elvebredd",
@@ -357,264 +335,8 @@
         "mega": 500.0
       },
       "amtv_status": "page ok; snapshot ok (39 rows)",
-      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (2 cards via search-text; dropped 1 substring-fragment cards)",
-      "new_items": [
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "FR",
-              "count": 1
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Candicorn",
-              "badges": "FR",
-              "count": 1,
-              "amtv_id": "4072"
-            },
-            {
-              "name": "Candicorn",
-              "badges": "FR",
-              "count": 1,
-              "amtv_id": "4072"
-            }
-          ],
-          "username": "RockerTimber",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "1 hour(s) ago",
-          "exact_time": "2026-10-30 01:41:58",
-          "you_rp": 44.0,
-          "them_rp": 43.0,
-          "note": "Offer vs listed value: L by 1 RP",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "a18635a02bfef6be5550"
-        },
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "FR",
-              "count": 1
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Stray Cat Dragon",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4397"
-            },
-            {
-              "name": "Skelicorn",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4363"
-            },
-            {
-              "name": "Stitches",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4373"
-            },
-            {
-              "name": "Boohoo",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4372"
-            },
-            {
-              "name": "Mummy Spider",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4352"
-            },
-            {
-              "name": "Bubblegeist",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4368"
-            },
-            {
-              "name": "Bobageist",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4367"
-            },
-            {
-              "name": "Caramelgeist",
-              "badges": "M",
-              "count": 1,
-              "amtv_id": "4366"
-            }
-          ],
-          "username": "ShadowTrade",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "1 hour(s) ago",
-          "exact_time": "2026-10-30 01:40:52",
-          "you_rp": 44.0,
-          "them_rp": 31.0,
-          "note": "Offer vs listed value: L by 13 RP",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "df97c1269d2c099a980a"
-        },
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "FR",
-              "count": 1
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Sugar Axolotl",
-              "badges": "NFR",
-              "count": 1,
-              "amtv_id": "2550"
-            }
-          ],
-          "username": "JeffTK",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "3 hour(s) ago",
-          "exact_time": "2026-10-30 00:03:15",
-          "you_rp": 44.0,
-          "them_rp": 57.0,
-          "note": "Offer vs listed value: W by 13 RP",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "581d4e00723ab8b003d2"
-        },
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "plain",
-              "count": 1
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            },
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            },
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            },
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            },
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            },
-            {
-              "name": "Jester Dragon",
-              "badges": "plain",
-              "count": 1,
-              "amtv_id": "4350"
-            }
-          ],
-          "username": "elaverix",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "3 hour(s) ago",
-          "exact_time": "2026-10-29 23:49:34",
-          "you_rp": 44.0,
-          "them_rp": 48.0,
-          "note": "Offer vs listed value: W by 4 RP",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "e19972145e85fe997c55"
-        },
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Count Slothula",
-              "badges": "MFR",
-              "count": 1,
-              "amtv_id": "4396"
-            },
-            {
-              "name": "Count Slothula",
-              "badges": "MFR",
-              "count": 1,
-              "amtv_id": "4396"
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "FR",
-              "count": 1
-            }
-          ],
-          "username": "Robiwnn",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "3 hour(s) ago",
-          "exact_time": "2026-10-29 23:51:17",
-          "you_rp": 40.0,
-          "them_rp": 44.0,
-          "note": "Offer vs listed value: W by 4 RP",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "22f04f693ac197b02289"
-        },
-        {
-          "source": "elvebredd",
-          "you_side": [],
-          "them_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "plain",
-              "count": 1
-            },
-            {
-              "name": "Strawberry Shortcake Bat Dragon Backpack",
-              "badges": "plain",
-              "count": 1
-            },
-            {
-              "name": "Strawberry Shortcake Bat Dragon Sticker",
-              "badges": "plain",
-              "count": 1
-            }
-          ],
-          "username": "Menu",
-          "lister": null,
-          "status": "offer",
-          "rel_time": null,
-          "exact_time": null,
-          "you_rp": null,
-          "them_rp": null,
-          "note": "split unverified \u2014 sides may be swapped",
-          "first_seen": "2026-10-30 07:22 UTC",
-          "fingerprint": "elve-3536682b8a4f96254f12"
-        }
-      ],
+      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (0 cards, unfiltered feed)",
+      "new_items": [],
       "recent_items": [
         {
           "source": "elvebredd",
@@ -1020,7 +742,7 @@
         "mega": 690.0
       },
       "amtv_status": "page ok; snapshot ok (27 rows)",
-      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (2 cards via search-text; dropped 1 substring-fragment cards)",
+      "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (0 cards, unfiltered feed)",
       "new_items": [],
       "recent_items": [
         {
