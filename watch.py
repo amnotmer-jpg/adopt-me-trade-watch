@@ -45,7 +45,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 # ---------------------------------------------------------------- config
 
@@ -325,7 +325,7 @@ DASHBOARD_TEMPLATE = r"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="900">
+<meta http-equiv="refresh" content="300">
 <title>Adopt Me Trade Watch</title>
 <style>
 body{font-family:system-ui,-apple-system,sans-serif;max-width:900px;margin:0 auto;padding:16px;background:#fafafa;color:#222}
@@ -340,12 +340,15 @@ h1{font-size:1.5em} h2{margin-top:2em;border-bottom:2px solid #ddd;padding-botto
 textarea{width:100%;height:110px;font-family:inherit}
 button{padding:8px 16px;margin:6px 6px 0 0;cursor:pointer}
 .note{background:#fff7ed;border:1px solid #fcd34d;border-radius:8px;padding:10px;margin:12px 0}
+#schedPanel input[type=number]{width:64px;padding:4px}
+#schedPanel select{padding:4px}
+#schedPanel .sched-row{margin:6px 0}
 small{color:#666}
 </style>
 </head>
 <body>
 <h1>🐾 Adopt Me Trade Watch</h1>
-<p class="meta">Last check: __GENERATED_AT__ · refreshes every 15 minutes.
+<p class="meta">Last check: __GENERATED_AT__ · checks follow the schedule below.
 AMTV rows are snapshot offers/trades; Elvebredd listings are offers, not completed trades.</p>
 
 <div class="note"><b>Your inventory (private to this browser):</b> type the pets you can
@@ -365,6 +368,39 @@ offered) — plain, FR, MFR and the rest are all different to the matcher.
 <br><label><input type="checkbox" id="onlyMine" onclick="toggleOnlyMine()"> For me only — show just cards whose You side I can fill exactly</label>
 <br><label><input type="checkbox" id="activeOnly" onclick="toggleActiveOnly()"> Active only — hide completed history</label>
 <span id="onlyMineHint" class="meta"></span></div>
+
+<div class="note" id="schedPanel">
+<h2 style="margin-top:0">⏱ Check-in rhythm</h2>
+<p class="meta" id="schedStatus"></p>
+<p class="meta">Times are in Chicago time. The checker itself wakes up every
+5 minutes, so that's the fastest it can go — a speed only takes effect
+on the next wake-up.</p>
+<div id="schedWindows"></div>
+<p><button onclick="addWindowRow()">+ Add a time window</button></p>
+<p><label>When no window matches, check every
+<input id="schedDefault" type="number" min="5" step="5"> minutes</label>
+<button onclick="saveSchedule()">Save schedule</button>
+<span id="schedMsg" class="meta"></span></p>
+<h3 style="margin-bottom:4px">Quick change</h3>
+<p class="meta">Change the speed right now, for a little while. It turns itself
+off when the time is up.</p>
+<p><label>Check every <input id="boostInterval" type="number" min="5" step="5"> minutes
+for <input id="boostAmount" type="number" min="1">
+<select id="boostUnit"><option value="minutes">minutes</option><option value="hours" selected>hours</option></select></label>
+<button onclick="saveBoost()">Set quick change</button>
+<button onclick="cancelBoost()">Cancel quick change</button>
+<span id="boostMsg" class="meta"></span></p>
+<div id="schedKeyBox">
+<p class="meta">To save from here, the page needs a key that can edit this repo.
+You make it once in your GitHub settings (a fine-grained key, this repo
+only, read + write on Contents). The key stays in this browser only — it
+is never sent anywhere except GitHub. Never paste it in chat.</p>
+<input id="schedKey" type="password" placeholder="GitHub key" style="width:100%">
+<br><button onclick="saveKey()">Save key in this browser</button>
+<button onclick="clearKey()">Forget key</button>
+<span id="keyMsg" class="meta"></span>
+</div>
+</div>
 
 <div id="sections"></div>
 
@@ -396,6 +432,137 @@ function clearInv(){
   document.getElementById("inv").value="";
   document.getElementById("invStatus").textContent="Cleared.";
   render();
+}
+
+// ---- Check schedule panel ----
+// The dashboard is a static page, so saving the schedule goes through
+// GitHub's contents API with a key the owner pastes once (kept in this
+// browser's localStorage, sent only to api.github.com).
+const SCHED_REPO="amnotmer-jpg/adopt-me-trade-watch";
+const SCHED_PATH="data/schedule.json";
+let schedRendered=false;
+function hourLabel(h){
+  h=((h%24)+24)%24;
+  if(h===0) return "12am";
+  if(h===12) return "12pm";
+  return h<12 ? h+"am" : (h-12)+"pm";
+}
+function hourOptions(sel){
+  let s="";
+  for(let h=0;h<24;h++) s+="<option value='"+h+"'"+(h===sel?" selected":"")+">"+hourLabel(h)+"</option>";
+  return s;
+}
+function fmtChicago(iso){
+  try{
+    const d=new Date(iso);
+    if(isNaN(d)) return "";
+    return d.toLocaleString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"});
+  }catch(e){ return ""; }
+}
+function windowRow(w){
+  const s=w?Math.floor(w.start_hour):12, e=w?Math.floor(w.end_hour):15, iv=w?w.interval_min:15;
+  return "<div class='sched-row'><label>From <select class='w-start'>"+hourOptions(s)+
+    "</select> to <select class='w-end'>"+hourOptions(e)+
+    "</select>, check every <input class='w-iv' type='number' min='5' step='5' value='"+iv+"'> minutes</label> "+
+    "<button onclick='this.parentElement.remove()'>Remove</button></div>";
+}
+function renderSchedule(){
+  const data=JSON.parse(document.getElementById("watch-data").textContent);
+  const sc=data.schedule||{default_interval_min:15,windows:[],boost:null};
+  let st="Checking every "+sc.effective_interval_min+" minutes";
+  if(sc.effective_source==="boost") st+=" (quick change)";
+  else if(sc.effective_source==="window") st+=" (in a time window)";
+  if(sc.next_check_at){ const nc=fmtChicago(sc.next_check_at); if(nc) st+=" · next check around "+nc; }
+  st+=" · times are in Chicago time.";
+  document.getElementById("schedStatus").textContent=st;
+  if(schedRendered) return;
+  schedRendered=true;
+  document.getElementById("schedWindows").innerHTML=(sc.windows||[]).map(windowRow).join("");
+  document.getElementById("schedDefault").value=sc.default_interval_min??15;
+  const b=sc.boost;
+  if(b && b.until){
+    const until=new Date(b.until);
+    if(!isNaN(until) && until>Date.now()){
+      document.getElementById("boostInterval").value=b.interval_min;
+      const mins=Math.max(1,Math.round((until-Date.now())/60000));
+      document.getElementById("boostAmount").value=mins>=60?Math.round(mins/60):mins;
+      document.getElementById("boostUnit").value=mins>=60?"hours":"minutes";
+      document.getElementById("boostMsg").textContent="Quick change active: every "+b.interval_min+" min until "+fmtChicago(b.until)+".";
+    }
+  }
+  if(localStorage.getItem("amw-gh-key")) document.getElementById("keyMsg").textContent="Key saved in this browser.";
+}
+function addWindowRow(){
+  document.getElementById("schedWindows").insertAdjacentHTML("beforeend", windowRow(null));
+}
+function readScheduleEdits(){
+  const rows=[...document.querySelectorAll("#schedWindows .sched-row")].map(r=>({
+    start_hour: parseInt(r.querySelector(".w-start").value,10),
+    end_hour: parseInt(r.querySelector(".w-end").value,10),
+    interval_min: Math.max(5, parseInt(r.querySelector(".w-iv").value,10)||15)
+  }));
+  return {default_interval_min: Math.max(5, parseInt(document.getElementById("schedDefault").value,10)||15), windows: rows};
+}
+async function ghSaveSchedule(sched, msgEl, okText){
+  const key=localStorage.getItem("amw-gh-key")||"";
+  if(!key){ document.getElementById("keyMsg").textContent="Paste your key below first, then try again."; return false; }
+  msgEl.textContent="Saving…";
+  try{
+    const api="https://api.github.com/repos/"+SCHED_REPO+"/contents/"+SCHED_PATH;
+    const headers={Authorization:"Bearer "+key, Accept:"application/vnd.github+json"};
+    let sha=null;
+    const get=await fetch(api,{headers});
+    if(get.ok){ sha=(await get.json()).sha; }
+    else if(get.status!==404){ throw new Error("GitHub said "+get.status); }
+    const body={message:"Update check schedule from dashboard",
+      content:btoa(unescape(encodeURIComponent(JSON.stringify(sched,null,2)))),
+      branch:"main"};
+    if(sha) body.sha=sha;
+    const put=await fetch(api,{method:"PUT",headers:headers,body:JSON.stringify(body)});
+    if(!put.ok){ let t=""; try{ t=(await put.json()).message||""; }catch(e){} throw new Error("GitHub said "+put.status+(t?" — "+t:"")); }
+    msgEl.textContent=okText+" The next check (within ~5 minutes) will pick it up; this panel refreshes after that check.";
+    return true;
+  }catch(e){
+    msgEl.textContent="Couldn't save: "+e.message;
+    return false;
+  }
+}
+function currentSchedule(){
+  const data=JSON.parse(document.getElementById("watch-data").textContent);
+  return data.schedule||{default_interval_min:15,windows:[],boost:null};
+}
+async function saveSchedule(){
+  const edits=readScheduleEdits();
+  const cur=currentSchedule();
+  await ghSaveSchedule({default_interval_min:edits.default_interval_min, windows:edits.windows, boost:cur.boost||null},
+    document.getElementById("schedMsg"), "Schedule saved.");
+}
+async function saveBoost(){
+  const iv=Math.max(5, parseInt(document.getElementById("boostInterval").value,10)||15);
+  const amt=parseInt(document.getElementById("boostAmount").value,10)||1;
+  const unit=document.getElementById("boostUnit").value;
+  const mins=unit==="hours"?amt*60:amt;
+  const until=new Date(Date.now()+mins*60000).toISOString();
+  const cur=currentSchedule();
+  const ok=await ghSaveSchedule({default_interval_min:cur.default_interval_min, windows:cur.windows||[], boost:{interval_min:iv, until}},
+    document.getElementById("boostMsg"), "Quick change set: every "+iv+" min for "+amt+" "+unit+".");
+  if(ok) document.getElementById("boostMsg").textContent+=" It turns itself off when the time is up.";
+}
+async function cancelBoost(){
+  const cur=currentSchedule();
+  await ghSaveSchedule({default_interval_min:cur.default_interval_min, windows:cur.windows||[], boost:null},
+    document.getElementById("boostMsg"), "Quick change cancelled.");
+}
+function saveKey(){
+  const v=document.getElementById("schedKey").value.trim();
+  if(!v){ document.getElementById("keyMsg").textContent="Paste a key first."; return; }
+  localStorage.setItem("amw-gh-key", v);
+  document.getElementById("schedKey").value="";
+  document.getElementById("keyMsg").textContent="Key saved in this browser.";
+}
+function clearKey(){
+  localStorage.removeItem("amw-gh-key");
+  document.getElementById("keyMsg").textContent="Key forgotten.";
 }
 // A card matches when every You-side entry is covered by inventory:
 // same pet name, exact same badges, enough count. "Add"/"Add Big"/"Add Small"
@@ -534,6 +701,7 @@ function render(){
       (it.note?"<div class='meta'>"+it.note+"</div>":"")+"</div>";
   }
   document.getElementById("sections").innerHTML=out;
+  renderSchedule();
 }
 render();
 setInterval(tickLiveAgo, 30000);
@@ -628,11 +796,110 @@ def load_seen():
     return {"fingerprints": {}, "records": {}}
 
 
+SCHEDULE_PATH = os.path.join(DATA_DIR, "schedule.json")
+DEFAULT_SCHEDULE = {"default_interval_min": 15, "windows": [],
+                    "boost": None}
+CHICAGO_TZ = "America/Chicago"
+
+
+def load_schedule():
+    """Load data/schedule.json, or the default (15 min, no windows)."""
+    if os.path.exists(SCHEDULE_PATH):
+        try:
+            with open(SCHEDULE_PATH) as fh:
+                data = json.load(fh)
+            if isinstance(data, dict):
+                out = dict(DEFAULT_SCHEDULE)
+                out.update(data)
+                return out
+        except Exception:
+            pass
+    return dict(DEFAULT_SCHEDULE)
+
+
+def chicago_now(now_utc):
+    """UTC datetime -> America/Chicago local time (DST-aware). Falls
+    back to UTC if timezone data is missing."""
+    try:
+        from zoneinfo import ZoneInfo
+        return now_utc.astimezone(ZoneInfo(CHICAGO_TZ))
+    except Exception:
+        return now_utc
+
+
+def effective_interval_min(schedule, now_utc):
+    """(interval, source): the check frequency in force right now.
+    A live boost wins, then the first matching time window (times in
+    Chicago local time; overnight windows wrap), else the default."""
+    boost = schedule.get("boost") or {}
+    until = boost.get("until")
+    if until:
+        try:
+            until_dt = datetime.fromisoformat(
+                str(until).replace("Z", "+00:00"))
+            if now_utc < until_dt:
+                return int(boost.get("interval_min", 15)), "boost"
+        except Exception:
+            pass
+    local = chicago_now(now_utc)
+    t = local.hour + local.minute / 60.0
+    for w in schedule.get("windows") or []:
+        try:
+            s, e = float(w["start_hour"]), float(w["end_hour"])
+            iv = int(w["interval_min"])
+        except Exception:
+            continue
+        if iv <= 0:
+            continue
+        inside = (s <= t < e) if s <= e else (t >= s or t < e)
+        if inside:
+            return iv, "window"
+    try:
+        return int(schedule.get("default_interval_min", 15)), "default"
+    except Exception:
+        return 15, "default"
+
+
+def schedule_decision(schedule, seen, now_utc):
+    """Should this run actually check? The workflow wakes every 5
+    minutes; a real check only runs once the effective interval has
+    (nearly) elapsed since the last real check. Manual runs
+    (workflow_dispatch) always check."""
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+        return {"skip": False, "reason": "manual run"}
+    interval, source = effective_interval_min(schedule, now_utc)
+    last = seen.get("last_check_at")
+    if last:
+        try:
+            last_dt = datetime.fromisoformat(
+                str(last).replace("Z", "+00:00"))
+            elapsed = (now_utc - last_dt).total_seconds() / 60.0
+            if elapsed < interval - 1:
+                return {"skip": True,
+                        "reason": (f"only {elapsed:.0f}m since last "
+                                   f"check; {source} interval is "
+                                   f"{interval}m")}
+        except Exception:
+            pass
+    return {"skip": False, "reason": f"{source} interval {interval}m"}
+
+
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     seen = load_seen()
     first_run = not seen["fingerprints"]
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.strftime("%Y-%m-%d %H:%M UTC")
+
+    # --- Schedule gate: the workflow wakes every 5 minutes, but a
+    # real check only runs when the configured schedule says so.
+    # Skipped runs write nothing, so nothing is committed for them.
+    schedule = load_schedule()
+    gate = schedule_decision(schedule, seen, now_dt)
+    if gate["skip"]:
+        print(f"[schedule] skip: {gate['reason']}")
+        return 0
+    print(f"[schedule] check: {gate['reason']}")
 
     # --- Elvebredd: catalog values (page HTML) + WS feed attempt ---
     elve_values, elve_status = {}, "not checked"
@@ -756,9 +1023,34 @@ def main():
               f"new={len(new_cards)} status={amtv_status}")
 
     # --- write outputs ---
+    # Drop an expired boost so the dashboard stops showing it.
+    boost = schedule.get("boost") or {}
+    if boost.get("until"):
+        try:
+            if now_dt >= datetime.fromisoformat(
+                    str(boost["until"]).replace("Z", "+00:00")):
+                schedule["boost"] = None
+                with open(SCHEDULE_PATH, "w") as fh:
+                    json.dump(schedule, fh, indent=2)
+        except Exception:
+            pass
+    seen["last_check_at"] = now_dt.isoformat()
     with open(SEEN_PATH, "w") as fh:
         json.dump(seen, fh, indent=2)
-    dashboard = {"generated_at": now, "pets": dashboard_pets}
+    interval, source = effective_interval_min(schedule, now_dt)
+    dashboard = {"generated_at": now, "pets": dashboard_pets,
+                 "schedule": {
+                     "default_interval_min": schedule.get(
+                         "default_interval_min", 15),
+                     "windows": schedule.get("windows") or [],
+                     "boost": schedule.get("boost"),
+                     "last_check_at": seen["last_check_at"],
+                     "effective_interval_min": interval,
+                     "effective_source": source,
+                     "next_check_at": (now_dt +
+                                       timedelta(minutes=interval)
+                                       ).isoformat(),
+                 }}
     with open(LISTINGS_PATH, "w") as fh:
         json.dump(dashboard, fh, indent=2)
     page_html = (DASHBOARD_TEMPLATE

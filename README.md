@@ -183,3 +183,39 @@ workflow's 12-minute timeout.
 
 No credentials, API keys, or private data live in this repo. The only
 secret is `NTFY_TOPIC`, stored in GitHub Actions secrets, never in files.
+
+
+## Check schedule
+
+The workflow wakes up every 5 minutes, but a real check only runs when
+`data/schedule.json` says so — so the check rhythm is adjustable without
+touching the workflow:
+
+```json
+{"default_interval_min": 15,
+ "windows": [{"start_hour": 12, "end_hour": 3, "interval_min": 10}],
+ "boost": {"interval_min": 5, "until": "2026-10-30T10:00:00+00:00"}}
+```
+
+- `windows`: time windows in America/Chicago local time (24-hour clock;
+  a window like 22 → 6 wraps overnight). The first matching window wins.
+- `default_interval_min`: used when no window matches. Shipped default:
+  15 minutes everywhere, which is the previous behavior.
+- `boost`: a quick change — a different frequency that lasts until
+  `until` (UTC), then the schedule takes over again on its own. An
+  expired boost is cleared by the next real run.
+- A run only counts as a check when it actually checks: skipped wake-ups
+  write nothing and commit nothing. A manual workflow run always checks
+  (it bypasses the gate), which is also how you force an immediate check
+  after changing the schedule.
+- 5 minutes is the fastest possible rhythm (the workflow's wake-up
+  cadence). Speeds are rounded to what the wake-ups can actually hit.
+
+The dashboard has a "Check-in rhythm" panel for editing all of this
+directly. The dashboard is a static page, so saving from it goes through
+GitHub's contents API with a fine-grained key the owner pastes once into
+the panel: this repo only, read + write on Contents. The key is kept in
+that browser's localStorage and sent only to api.github.com — never
+pasted in chat, never committed. Without the key, the schedule can still
+be edited by hand in `data/schedule.json` on GitHub, or via a manual
+request in chat.
