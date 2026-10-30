@@ -1,15 +1,18 @@
 name: Adopt Me trade watch
 
-# Runs the standalone checker every 15 minutes and publishes the dashboard
-# to GitHub Pages. Free on a PUBLIC repo (unlimited Actions minutes + Pages).
-# On a private repo, the 2,000 min/month free allowance does NOT cover a
-# 15-minute cadence (~2,900 min/month), and Pages needs a paid plan — so
-# keep this repo public. The repo contains no inventory and no match flags:
-# matches highlight locally in each visitor's browser only.
+# Runs the standalone checker on a 5-minute wake-up and publishes the
+# dashboard to GitHub Pages. Free on a PUBLIC repo (unlimited Actions
+# minutes + Pages). The script itself decides whether each wake-up
+# actually checks, per data/schedule.json (see README "Check schedule"):
+# a 5-minute cadence is ~13,000 min/month, so on a private repo the
+# 2,000 min/month free allowance would NOT cover it, and Pages needs a
+# paid plan — keep this repo public. The repo contains no inventory and
+# no match flags: matches highlight locally in each visitor's browser
+# only.
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:  # manual run button, also used for the first test
 
 permissions:
@@ -47,6 +50,6 @@ jobs:
         run: |
           git config user.name "adopt-me-watch"
           git config user.email "adopt-me-watch@users.noreply.github.com"
-          git add index.html data/listings.json data/seen.json
+          git add index.html data/listings.json data/seen.json data/schedule.json
           git diff --cached --quiet || git commit -m "trade watch update"
           git push
