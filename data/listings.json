@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30 07:35 UTC",
+  "generated_at": "2026-10-30 07:46 UTC",
   "pets": [
     {
       "key": "sugar_axolotl",
@@ -336,7 +336,48 @@
       },
       "amtv_status": "page ok; snapshot ok (39 rows)",
       "elvebredd_status": "catalog read (3 of 3 pets found); browser ok (0 cards, unfiltered feed)",
-      "new_items": [],
+      "new_items": [
+        {
+          "source": "amtv",
+          "you_side": [
+            {
+              "name": "Strawberry Shortcake Bat Dragon",
+              "badges": "FR",
+              "count": 1
+            }
+          ],
+          "them_side": [
+            {
+              "name": "Werewolf",
+              "badges": "FR",
+              "count": 1,
+              "amtv_id": "1863"
+            },
+            {
+              "name": "Cheetah",
+              "badges": "NR",
+              "count": 1,
+              "amtv_id": "2404"
+            },
+            {
+              "name": "Glacier Kitsune",
+              "badges": "FR",
+              "count": 1,
+              "amtv_id": "1974"
+            }
+          ],
+          "username": "frommars11",
+          "lister": null,
+          "status": "Active",
+          "rel_time": "2 minute(s) ago",
+          "exact_time": "2026-10-30 03:44:35",
+          "you_rp": 44.0,
+          "them_rp": 44.0,
+          "note": null,
+          "first_seen": "2026-10-30 07:46 UTC",
+          "fingerprint": "500224feb2d1b033d655"
+        }
+      ],
       "recent_items": [
         {
           "source": "elvebredd",
@@ -368,6 +409,46 @@
           "note": "split unverified \u2014 sides may be swapped",
           "first_seen": "2026-10-30 07:22 UTC",
           "fingerprint": "elve-3536682b8a4f96254f12"
+        },
+        {
+          "source": "amtv",
+          "you_side": [
+            {
+              "name": "Strawberry Shortcake Bat Dragon",
+              "badges": "FR",
+              "count": 1
+            }
+          ],
+          "them_side": [
+            {
+              "name": "Werewolf",
+              "badges": "FR",
+              "count": 1,
+              "amtv_id": "1863"
+            },
+            {
+              "name": "Cheetah",
+              "badges": "NR",
+              "count": 1,
+              "amtv_id": "2404"
+            },
+            {
+              "name": "Glacier Kitsune",
+              "badges": "FR",
+              "count": 1,
+              "amtv_id": "1974"
+            }
+          ],
+          "username": "frommars11",
+          "lister": null,
+          "status": "Active",
+          "rel_time": "2 minute(s) ago",
+          "exact_time": "2026-10-30 03:44:35",
+          "you_rp": 44.0,
+          "them_rp": 44.0,
+          "note": null,
+          "first_seen": "2026-10-30 07:46 UTC",
+          "fingerprint": "500224feb2d1b033d655"
         },
         {
           "source": "amtv",
@@ -700,34 +781,6 @@
           "note": "Offer vs listed value: W by 17 RP",
           "first_seen": "2026-10-30 03:37 UTC",
           "fingerprint": "4f076d0512285387c105"
-        },
-        {
-          "source": "amtv",
-          "you_side": [
-            {
-              "name": "Strawberry Shortcake Bat Dragon",
-              "badges": "FR",
-              "count": 1
-            }
-          ],
-          "them_side": [
-            {
-              "name": "Goose",
-              "badges": "R",
-              "count": 1,
-              "amtv_id": "1603"
-            }
-          ],
-          "username": "Boots",
-          "lister": null,
-          "status": "Active",
-          "rel_time": "1 hour(s) ago",
-          "exact_time": "2026-10-29 22:16:26",
-          "you_rp": 44.0,
-          "them_rp": 32.0,
-          "note": "Offer vs listed value: L by 12 RP",
-          "first_seen": "2026-10-30 03:37 UTC",
-          "fingerprint": "76c260fc00ab85c7119c"
         }
       ]
     },
@@ -1093,5 +1146,14 @@
         }
       ]
     }
-  ]
+  ],
+  "schedule": {
+    "default_interval_min": 15,
+    "windows": [],
+    "boost": null,
+    "last_check_at": "2026-10-30T07:46:50.453042+00:00",
+    "effective_interval_min": 15,
+    "effective_source": "default",
+    "next_check_at": "2026-10-30T08:01:50.453042+00:00"
+  }
 }

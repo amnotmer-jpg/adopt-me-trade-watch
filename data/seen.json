@@ -58,12 +58,12 @@
       "33b4ee1449a628197f98",
       "3418aab45a0e1c77da16",
       "344a68cca720673b295b",
-      "35a83fc89794d619e76f",
       "3b1e860b0e8a60109f66",
       "47429277bf41a08c741c",
       "47cb216478d34a8c090f",
       "49dc45953934691e9f09",
       "4f076d0512285387c105",
+      "500224feb2d1b033d655",
       "581d4e00723ab8b003d2",
       "5d5660a42ef8e26ac562",
       "60a037c984f0f9e899f8",
@@ -1437,6 +1437,47 @@
         ],
         "them_side": [
           {
+            "name": "Werewolf",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "1863"
+          },
+          {
+            "name": "Cheetah",
+            "badges": "NR",
+            "count": 1,
+            "amtv_id": "2404"
+          },
+          {
+            "name": "Glacier Kitsune",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "1974"
+          }
+        ],
+        "you_rp": 44.0,
+        "them_rp": 44.0,
+        "win_lose": null,
+        "username": "frommars11",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "2 minute(s) ago",
+        "exact_time": "2026-10-30 03:44:35",
+        "fingerprint": "500224feb2d1b033d655",
+        "first_seen": "2026-10-30 07:46 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
             "name": "Candicorn",
             "badges": "FR",
             "count": 1,
@@ -2716,59 +2757,6 @@
         "exact_time": "2026-10-29 15:29:37",
         "fingerprint": "9ddd96daa42b712db511",
         "first_seen": "2026-10-29 21:54 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Slime",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "1862"
-          },
-          {
-            "name": "Slime",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "1862"
-          },
-          {
-            "name": "Slime",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "1862"
-          },
-          {
-            "name": "Slime",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "1862"
-          },
-          {
-            "name": "Slime",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "1862"
-          }
-        ],
-        "you_rp": 44.0,
-        "them_rp": 51.0,
-        "win_lose": "W by 7 RP",
-        "username": "IQIWJAHANAJ",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "3 hour(s) ago",
-        "exact_time": "2026-10-29 14:19:16",
-        "fingerprint": "0949ca3942c2e07d6153",
-        "first_seen": "2026-10-29 21:54 UTC"
       }
     ],
     "monkey_king": [
@@ -4036,5 +4024,6 @@
         "fingerprint": "cd22f64a4679c8a69794"
       }
     ]
-  }
+  },
+  "last_check_at": "2026-10-30T07:46:50.453042+00:00"
 }
