@@ -437,6 +437,29 @@ function toggleActiveOnly(){
   try{localStorage.setItem("amw-active-only", document.getElementById("activeOnly").checked?"1":"0");}catch(e){}
   render();
 }
+// Live relative time for Elvebredd cards. Their scraped "12s ago"
+// string is frozen at scrape time and drifts, so it must never be
+// shown as if live. first_seen is a real UTC timestamp recorded
+// when the watcher first saw the card, so the dashboard ticks
+// "first seen X ago" from it instead (refreshed every 30s).
+function relAgo(utcStr){
+  try{
+    const d=new Date(utcStr.replace(" ","T").replace(" UTC","Z"));
+    if(isNaN(d)) return null;
+    let s=Math.floor((Date.now()-d.getTime())/1000);
+    if(s<0) s=0;
+    if(s<60) return s+"s ago";
+    if(s<3600) return Math.floor(s/60)+"m ago";
+    if(s<86400) return Math.floor(s/3600)+"h ago";
+    return Math.floor(s/86400)+"d ago";
+  }catch(e){ return null; }
+}
+function tickLiveAgo(){
+  document.querySelectorAll(".live-ago").forEach(el=>{
+    const ago=relAgo(el.getAttribute("data-ts")||"");
+    if(ago) el.textContent="first seen "+ago;
+  });
+}
 function render(){
   const data=JSON.parse(document.getElementById("watch-data").textContent);
   const inv=getInv();
@@ -490,9 +513,18 @@ function render(){
     const actionable=it.status!=="Completed";
     const cls=(actionable&&isMatch(youSideOf(it),inv))?"card match":"card";
     const src=it.source==="amtv"?"AMTV":"Elvebredd";
-    const when=it.exact_time||it.rel_time||it.first_seen||"";
+    // Elvebredd rows carry no absolute listing time, so their frozen
+    // scraped rel_time is replaced by a live "first seen X ago"
+    // ticking from first_seen. AMTV rows keep their static time.
+    let whenHtml=it.exact_time||it.rel_time||it.first_seen||"";
+    if(it.source!=="amtv" && it.first_seen){
+      const ago=relAgo(it.first_seen);
+      whenHtml=ago
+        ?"<span class='live-ago' data-ts='"+it.first_seen+"'>first seen "+ago+"</span>"
+        :("first seen "+it.first_seen);
+    }
     return "<div class='"+cls+"'><span class='badge "+(it.source==="amtv"?"amtv":"elve")+"'>"+src+
-      "</span> <span class='meta'>"+when+(it.username?" · offered by @"+it.username:"")+
+      "</span> <span class='meta'>"+whenHtml+(it.username?" · offered by @"+it.username:"")+
       (it.lister?" · listed by @"+it.lister:"")+
       (it.status?" · "+it.status:"")+
       (it.you_rp!=null?" · You "+it.you_rp+" RP":"")+
@@ -504,6 +536,7 @@ function render(){
   document.getElementById("sections").innerHTML=out;
 }
 render();
+setInterval(tickLiveAgo, 30000);
 </script>
 </body>
 </html>
