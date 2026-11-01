@@ -1,16 +1,8 @@
 {
   "default_interval_min": 15,
-  "windows": [
-    {
-      "start_hour": 2,
-      "end_hour": 13,
-      "interval_min": 45
-    },
-    {
-      "start_hour": 13,
-      "end_hour": 2,
-      "interval_min": 15
-    }
-  ],
-  "boost": null
+  "windows": [],
+  "boost": {
+    "interval_min": 5,
+    "until": "2026-11-01T09:40:34.081Z"
+  }
 }
