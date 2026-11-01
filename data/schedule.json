@@ -1,1 +1,8 @@
-{"boost":null,"default_interval_min":15,"windows":[]}
+{
+  "default_interval_min": 15,
+  "windows": [],
+  "boost": {
+    "interval_min": 5,
+    "until": "2026-11-01T09:38:36.493Z"
+  }
+}
