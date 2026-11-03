@@ -54,9 +54,9 @@
       "057aecef015481a69456",
       "0b73b99e2642556c8b47",
       "0bc226d8da6fff3af951",
-      "1f3fb0deccba59a8c47d",
+      "1b507e5c22b7cdba95c9",
       "22f04f693ac197b02289",
-      "2bd9a32dc659ed60cd96",
+      "285a77811f390188f5ca",
       "2c0ffc1821fe4bad76d8",
       "2c4fd9b903307819ac38",
       "2fc58e90db85b8bb964c",
@@ -72,41 +72,34 @@
       "5d5660a42ef8e26ac562",
       "60768094b55f9a44ddde",
       "6858df31af2172c68397",
-      "6bef229770c950d343a5",
       "6c72b709a33c7c44f675",
       "6e7248f5f21a5c385b6b",
-      "6f0f66c55ca9a9a0a50e",
       "79619a6cec1891c3e0ea",
-      "7c3b7b69f5f9d58b91da",
       "7d922a642701055bcfd4",
       "8619fff7f3ab02e39315",
-      "8e05d9b80e54ea17080b",
       "8e6775fbbb418d745686",
-      "90ca115120d7059fed8c",
       "972dac7cd1cb51292311",
       "99e2a43747c83944eea7",
       "9a04d96016f5fd2ca282",
-      "9c9074f5b7ef79a3efa3",
       "9cfae70ecd8004f31873",
-      "9f8037bbae24197c076b",
-      "a9b32cf4f223aa261091",
       "aa4733105c31c11eb7ef",
       "b0304bd43f28c97ab969",
+      "b3426961e90219105dd5",
       "b93903cec722e7a3a76a",
-      "c33cbb4cb1947c8def4d",
       "ca72241b5b5950c1b74b",
       "d33b78d8968bd507eaec",
+      "d4f12c69a6c77c51adb5",
       "d9b7403a84846c54a4a6",
       "e0e90017681bfb166a55",
       "e288e3b2de57ef0708cc",
       "e29477b4a808ebd729f7",
       "e31a68c550297caf87b0",
       "e8ae48ea4563afb67c5f",
+      "ea504bf86cd4b5441b54",
       "ec13ca1afcca7cb59c74",
       "ed9c9adbde2eb1867d07",
-      "f0d2764e6711403ce93b",
       "f1a635ffbfcf673b5602",
-      "f3c140beb183f601e9ad",
+      "f4c985992156659e35c6",
       "f8c1c66a135478bb92bc"
     ],
     "monkey_king": [
@@ -118,13 +111,16 @@
       "1824101cd2bfaf6641cf",
       "19c6c44955a9e1edff3d",
       "21047093a894313edd30",
+      "2471440c4947e142cd00",
       "38ab99d63ce30822693b",
       "39c92fbe45cf1e8f06e7",
       "39edea4c7dae29f5d7b7",
+      "4138a0ab3c2652c082b3",
       "4668c2fbdaaee3b0e1b6",
       "47f8c43b116905a36992",
       "4b795354d46dfe0187e0",
       "4d8ec3e61b1da6f7101c",
+      "51fa546ecb9810a4cf8b",
       "5e4751892475ecb53d0a",
       "6671600d5f08cab48e32",
       "7362d5fd474098ecee2d",
@@ -1588,6 +1584,372 @@
         "you_side": [
           {
             "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Turtle",
+            "badges": "NFR",
+            "count": 1,
+            "amtv_id": "16"
+          },
+          {
+            "name": "Choco Penguin",
+            "badges": "NR",
+            "count": 1,
+            "amtv_id": "3090"
+          },
+          {
+            "name": "Skelicorn",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4363"
+          },
+          {
+            "name": "Blue Cat",
+            "badges": "M",
+            "count": 1,
+            "amtv_id": "4338"
+          }
+        ],
+        "you_rp": 45.0,
+        "them_rp": 52.0,
+        "win_lose": "W by 7 RP",
+        "username": "wolfynitro",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "13 minute(s) ago",
+        "exact_time": "2026-11-03 02:36:31",
+        "fingerprint": "f4c985992156659e35c6",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Jekyll Hydra",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "2524"
+          },
+          {
+            "name": "Phantom Dragon",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "3048"
+          },
+          {
+            "name": "Cerberus",
+            "badges": "R",
+            "count": 1,
+            "amtv_id": "60"
+          }
+        ],
+        "you_rp": 45.0,
+        "them_rp": 53.0,
+        "win_lose": "W by 8 RP",
+        "username": "xenon04",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "1 hour(s) ago",
+        "exact_time": "2026-11-03 01:46:01",
+        "fingerprint": "b3426961e90219105dd5",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "plain",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Matcha Cat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4343"
+          },
+          {
+            "name": "Unicorn",
+            "badges": "NR",
+            "count": 1,
+            "amtv_id": "54"
+          },
+          {
+            "name": "Cow",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "39"
+          },
+          {
+            "name": "Llama",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "44"
+          }
+        ],
+        "you_rp": 45.0,
+        "them_rp": 45.0,
+        "win_lose": null,
+        "username": "elaverix",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "1 hour(s) ago",
+        "exact_time": "2026-11-03 01:09:01",
+        "fingerprint": "285a77811f390188f5ca",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Turtle",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "16"
+          },
+          {
+            "name": "Turtle",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "16"
+          },
+          {
+            "name": "Ride-A-Pet Potion",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "147"
+          },
+          {
+            "name": "Ride-A-Pet Potion",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "147"
+          },
+          {
+            "name": "Ride-A-Pet Potion",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "147"
+          },
+          {
+            "name": "Ride-A-Pet Potion",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "147"
+          }
+        ],
+        "you_rp": 45.0,
+        "them_rp": 50.0,
+        "win_lose": "W by 5 RP",
+        "username": "Justanormalone",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "3 hour(s) ago",
+        "exact_time": "2026-11-02 23:21:35",
+        "fingerprint": "ea504bf86cd4b5441b54",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          },
+          {
+            "name": "Copycat",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4370"
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "you_rp": 86.0,
+        "them_rp": 45.0,
+        "win_lose": "L by 41 RP",
+        "username": "Maxxiemum",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "3 hour(s) ago",
+        "exact_time": "2026-11-02 23:12:01",
+        "fingerprint": "1b507e5c22b7cdba95c9",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Crocodile",
+            "badges": "NFR",
+            "count": 1,
+            "amtv_id": "30"
+          },
+          {
+            "name": "Elephant",
+            "badges": "R",
+            "count": 1,
+            "amtv_id": "22"
+          },
+          {
+            "name": "Purrowl",
+            "badges": "plain",
+            "count": 1,
+            "amtv_id": "4165"
+          }
+        ],
+        "you_rp": 45.0,
+        "them_rp": 55.0,
+        "win_lose": "W by 10 RP",
+        "username": "Mexidamian",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "4 hour(s) ago",
+        "exact_time": "2026-11-02 22:28:01",
+        "fingerprint": "d4f12c69a6c77c51adb5",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
+      {
+        "pet": "ssbd",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Strawberry Shortcake Bat Dragon",
             "badges": "plain",
             "count": 1
           }
@@ -2925,513 +3287,38 @@
         "exact_time": "2026-11-02 09:07:28",
         "fingerprint": "8619fff7f3ab02e39315",
         "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          },
-          {
-            "name": "Pet Handler Pro Certificate",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2460"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 32.0,
-        "win_lose": "L by 13 RP",
-        "username": "Mishelle1679",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "4 hour(s) ago",
-        "exact_time": "2026-11-02 08:46:00",
-        "fingerprint": "b0304bd43f28c97ab969",
-        "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Fairy Bat Dragon",
-            "badges": "R",
-            "count": 1,
-            "amtv_id": "2613"
-          },
-          {
-            "name": "Shark Puppy",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "1739"
-          },
-          {
-            "name": "Brown Bear",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "29"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Golden Unicorn",
-            "badges": "NFR",
-            "count": 1,
-            "amtv_id": "34"
-          },
-          {
-            "name": "Walrus",
-            "badges": "NR",
-            "count": 1,
-            "amtv_id": "961"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 48.0,
-        "win_lose": "W by 3 RP",
-        "username": "xhaesn",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "4 hour(s) ago",
-        "exact_time": "2026-11-02 08:39:03",
-        "fingerprint": "b93903cec722e7a3a76a",
-        "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Fly-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "146"
-          },
-          {
-            "name": "Turtle",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "16"
-          },
-          {
-            "name": "Monkey",
-            "badges": "MFR",
-            "count": 1,
-            "amtv_id": "91"
-          },
-          {
-            "name": "Rock",
-            "badges": "MFR",
-            "count": 1,
-            "amtv_id": "1093"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 47.0,
-        "win_lose": "W by 2 RP",
-        "username": "desired123",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "6 hour(s) ago",
-        "exact_time": "2026-11-02 07:03:03",
-        "fingerprint": "557a93e3490d366b4446",
-        "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Phantom Dragon",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "3048"
-          },
-          {
-            "name": "Wood Pigeon",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "1586"
-          },
-          {
-            "name": "Ride-A-Pet Potion",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "147"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 46.0,
-        "win_lose": "W by 1 RP",
-        "username": "Koookiela",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "6 hour(s) ago",
-        "exact_time": "2026-11-02 06:31:33",
-        "fingerprint": "d9b7403a84846c54a4a6",
-        "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "plain",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Frostbite Bear",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2742"
-          },
-          {
-            "name": "Frost Fury",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "31"
-          },
-          {
-            "name": "Cupid Dragon",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2716"
-          },
-          {
-            "name": "Chicken",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "76"
-          },
-          {
-            "name": "Skelicorn",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "4363"
-          },
-          {
-            "name": "Ehecatl",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "2954"
-          },
-          {
-            "name": "Black-Footed Ferret",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4062"
-          },
-          {
-            "name": "Black-Footed Ferret",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4062"
-          },
-          {
-            "name": "Black-Footed Ferret",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4062"
-          },
-          {
-            "name": "Pangolin",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4063"
-          },
-          {
-            "name": "Mexican Wolf",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4061"
-          },
-          {
-            "name": "Pilot Gull",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4213"
-          },
-          {
-            "name": "Black Tiger",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4058"
-          },
-          {
-            "name": "Black Rhino",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4060"
-          },
-          {
-            "name": "Black Rhino",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4060"
-          },
-          {
-            "name": "Black Rhino",
-            "badges": "N",
-            "count": 1,
-            "amtv_id": "4060"
-          },
-          {
-            "name": "Puffer Fish",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "1735"
-          },
-          {
-            "name": "Galapagos Sea Lion",
-            "badges": "M",
-            "count": 1,
-            "amtv_id": "4057"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 49.0,
-        "win_lose": "W by 4 RP",
-        "username": "Mirkooo",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "7 hour(s) ago",
-        "exact_time": "2026-11-02 05:34:35",
-        "fingerprint": "99e2a43747c83944eea7",
-        "first_seen": "2026-11-02 18:21 UTC"
-      },
-      {
-        "pet": "ssbd",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Strawberry Shortcake Bat Dragon",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Shark Puppy",
-            "badges": "NF",
-            "count": 1,
-            "amtv_id": "1739"
-          },
-          {
-            "name": "Pink Cat",
-            "badges": "R",
-            "count": 1,
-            "amtv_id": "50"
-          }
-        ],
-        "you_rp": 45.0,
-        "them_rp": 49.0,
-        "win_lose": "W by 4 RP",
-        "username": "atok0160",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "8 hour(s) ago",
-        "exact_time": "2026-11-02 05:03:34",
-        "fingerprint": "e29477b4a808ebd729f7",
-        "first_seen": "2026-11-02 18:21 UTC"
       }
     ],
     "monkey_king": [
+      {
+        "pet": "monkey_king",
+        "source": "amtv",
+        "you_side": [
+          {
+            "name": "Monkey King",
+            "badges": "FR",
+            "count": 1
+          }
+        ],
+        "them_side": [
+          {
+            "name": "Cow",
+            "badges": "FR",
+            "count": 1,
+            "amtv_id": "39"
+          }
+        ],
+        "you_rp": 34.0,
+        "them_rp": 32.0,
+        "win_lose": "L by 2 RP",
+        "username": "Javier1234",
+        "lister": null,
+        "status": "Active",
+        "rel_time": "1 hour(s) ago",
+        "exact_time": "2026-11-03 01:15:39",
+        "fingerprint": "2471440c4947e142cd00",
+        "first_seen": "2026-11-03 07:49 UTC"
+      },
       {
         "pet": "monkey_king",
         "source": "amtv",
@@ -4656,85 +4543,8 @@
         "exact_time": "2026-10-12 14:30:25",
         "fingerprint": "38ab99d63ce30822693b",
         "first_seen": "2026-10-29 03:47 UTC"
-      },
-      {
-        "pet": "monkey_king",
-        "source": "amtv",
-        "you_side": [
-          {
-            "name": "Monkey King",
-            "badges": "FR",
-            "count": 1
-          }
-        ],
-        "them_side": [
-          {
-            "name": "Ice Golem",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "962"
-          },
-          {
-            "name": "Octopus",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "141"
-          },
-          {
-            "name": "Dimension Drifter",
-            "badges": "NFR",
-            "count": 1,
-            "amtv_id": "2712"
-          },
-          {
-            "name": "Bolt",
-            "badges": "NR",
-            "count": 1,
-            "amtv_id": "4364"
-          },
-          {
-            "name": "Royal Capuchin Monkey",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "2077"
-          },
-          {
-            "name": "Villain Gibbon",
-            "badges": "FR",
-            "count": 1,
-            "amtv_id": "2840"
-          },
-          {
-            "name": "Huntsman Robin",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "4331"
-          },
-          {
-            "name": "Frankenfeline",
-            "badges": "plain",
-            "count": 1,
-            "amtv_id": "2493"
-          },
-          {
-            "name": "Super Saru",
-            "badges": "NFR",
-            "count": 1,
-            "amtv_id": "2788"
-          }
-        ],
-        "you_rp": 30.0,
-        "them_rp": 14.9,
-        "win_lose": "L by 15.1 RP",
-        "username": "egot",
-        "lister": null,
-        "status": "Active",
-        "rel_time": "16 day(s) ago",
-        "exact_time": "2026-10-12 09:04:50",
-        "fingerprint": "b46cb9770b9b6ecd5a6e",
-        "first_seen": "2026-10-29 03:47 UTC"
       }
     ]
   },
-  "last_check_at": "2026-11-03T01:05:13.460922+00:00"
+  "last_check_at": "2026-11-03T07:49:54.792749+00:00"
 }
