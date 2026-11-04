@@ -155,7 +155,9 @@ EXTRACT_JS = r"""
     let base = (src.split('/').pop() || '');
     try { base = decodeURIComponent(base); } catch (e) {}
     if (base.indexOf('/') !== -1) base = base.split('/').pop();
-    return base.replace(/\.(png|webp|jpg|jpeg|avif)(\?.*)?$/i, '');
+    // Elvebredd now serves optimized thumbnails ("<Name>.thumb.webp"),
+    // so strip the ".thumb" marker too, not just the extension.
+    return base.replace(/\.(png|webp|jpg|jpeg|avif)(\?.*)?$/i, '').replace(/\.thumb$/i, '');
   }
   function isPetImg(img) {
     const hay = ((img.getAttribute('src') || '') + ' ' +
