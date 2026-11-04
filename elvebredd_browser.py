@@ -23,7 +23,9 @@ Extraction strategy (tolerant, because the site's class names change):
   2. Try the page's Search box ("What are you looking for?") per pet:
      type the pet name, wait, extract. If the search box is missing or
      filtering yields nothing, fall back to one unfiltered extraction
-     and filter client-side by pet name.
+     and filter client-side by pet name. The fallback reloads the
+     Trade Center fresh first, so it is genuinely unfiltered (the
+     search box's filter does not linger into it).
   3. Group pet images into cards: for each pet image, walk up to the
      smallest ancestor whose text contains a relative-time string
      ("…ago") — that ancestor is the card container.
@@ -139,7 +141,31 @@ EXTRACT_JS = r"""
   const userRe = /^[A-Za-z0-9_]{3,30}$/;
   const skip = new Set(["you","add","trades","trade","ago","offer","offers",
                         "listing","listings","value","difference","search","create"]);
-  const petImgs = [...document.querySelectorAll('img[src*="/images/pets/"]')];
+  // Pet images: historically /images/pets/<Name>.png, but that path can
+  // arrive URL-encoded (Next.js /_next/image?url=...) or via srcset /
+  // data-src, so match broadly and resolve the real filename.
+  function petNameFrom(img) {
+    let src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+    const m = src.match(/[?&]url=([^&]+)/);
+    if (m) { try { src = decodeURIComponent(m[1]); } catch (e) {} }
+    if (src.indexOf('/images/pets/') === -1) {
+      const ss = img.getAttribute('srcset') || '';
+      if (ss) src = ss.split(',')[0].trim().split(/\s+/)[0];
+    }
+    let base = (src.split('/').pop() || '');
+    try { base = decodeURIComponent(base); } catch (e) {}
+    if (base.indexOf('/') !== -1) base = base.split('/').pop();
+    return base.replace(/\.(png|webp|jpg|jpeg|avif)(\?.*)?$/i, '');
+  }
+  function isPetImg(img) {
+    const hay = ((img.getAttribute('src') || '') + ' ' +
+                 (img.getAttribute('data-src') || '') + ' ' +
+                 (img.getAttribute('srcset') || ''));
+    return hay.indexOf('/images/pets/') !== -1 ||
+           hay.indexOf('images%2Fpets') !== -1 ||
+           hay.indexOf('images%2fpets') !== -1;
+  }
+  const petImgs = [...document.querySelectorAll('img')].filter(isPetImg);
   // Group pet images by card container: smallest ancestor containing an
   // "ago" time string.
   const cards = new Map();
@@ -175,9 +201,11 @@ EXTRACT_JS = r"""
     function badgeFor(img) {
       let el = img.parentElement;
       for (let d = 0; d < 3 && el; d++) {
-        const ov = el.querySelector('img[src*="/images/amoverlays/"]');
+        const ov = el.querySelector('img[src*="amoverlays"]');
         if (ov) {
-          const m = ov.getAttribute('src').match(/\/amoverlays\/([^\/\?]+)\.svg/i);
+          let s = ov.getAttribute('src') || '';
+          try { s = decodeURIComponent(s); } catch (e) {}
+          const m = s.match(/amoverlays\/([^\/\?]+)\.svg/i);
           if (m) return m[1];
         }
         el = el.parentElement;
@@ -193,14 +221,12 @@ EXTRACT_JS = r"""
         if (cur.length) clusters.push(cur);
         curParent = p; cur = [];
       }
-      const src = img.getAttribute('src') || '';
-      const name = decodeURIComponent(src.split('/').pop().replace(/\.png.*$/i, ''));
-      cur.push([name, badgeFor(img)]);
+      cur.push([petNameFrom(img), badgeFor(img)]);
     }
     if (cur.length) clusters.push(cur);
     out.push({username, rel_time: timeM ? timeM[0] : null, clusters});
   }
-  return out;
+  return {cards: out, image_count: petImgs.length};
 }
 """
 
@@ -226,6 +252,14 @@ def _is_substring_fragment(you_side, them_side, pet_name):
     return False
 
 
+def _norm_name(name):
+    """Lowercase, separators -> spaces, collapse whitespace. Lets
+    'sugar-axolotl' / 'sugar_axolotl' match the tracked pet's display
+    name without ever inventing a name: only the tracked pet's own
+    entries are canonicalized to its display name."""
+    return re.sub(r"\s+", " ", re.sub(r"[-_]+", " ", (name or "").lower())).strip()
+
+
 def _raw_to_records(raw_cards, pet_key, pet_name, from_search=False):
     """Filter raw cards to one pet and convert to watch.py records.
     Returns (records, dropped): dropped counts search-path cards
@@ -249,6 +283,15 @@ def _raw_to_records(raw_cards, pet_key, pet_name, from_search=False):
             split_verified = False
         you_side = _collapse([(n, b or "plain") for n, b in you_raw])
         them_side = _collapse([(n, b or "plain") for n, b in them_raw])
+        # Canonicalize the tracked pet's own entries: image filenames
+        # may differ in case/separators ("sugar-axolotl") from the
+        # display name without being a different pet. Other entries
+        # keep their image names untouched.
+        norm_pet = _norm_name(pet_name)
+        for side in (you_side, them_side):
+            for e in side:
+                if _norm_name(e["name"]) == norm_pet:
+                    e["name"] = pet_name
         # Does this card mention the tracked pet on either side?
         mentioned = any(e["name"] == pet_name
                         for e in you_side + them_side)
@@ -323,12 +366,14 @@ def fetch_elvebredd_browser(pet_names, wait_s=4.0):
                           wait_until="domcontentloaded")
                 try:
                     page.wait_for_selector(
-                        'img[src*="/images/pets/"]', timeout=30000)
+                        'img[src*="images/pets"], '
+                        'img[src*="images%2Fpets"]', timeout=30000)
                 except Exception:
                     pass
                 page.wait_for_timeout(int(wait_s * 1000))
 
                 search = _find_search_box(page)
+                search_found = search is not None
                 if search is not None:
                     # Filtered path: one search per pet.
                     method = "search-text"
@@ -355,7 +400,9 @@ def fetch_elvebredd_browser(pet_names, wait_s=4.0):
                             except Exception:
                                 pass
                             page.wait_for_timeout(3000)
-                            raw = page.evaluate(EXTRACT_JS)
+                            res = page.evaluate(EXTRACT_JS)
+                            raw = (res.get("cards", [])
+                                   if isinstance(res, dict) else res)
                             recs, dropped = _raw_to_records(
                                 raw, key, name, from_search=True)
                             result["cards"][key] = recs
@@ -378,8 +425,30 @@ def fetch_elvebredd_browser(pet_names, wait_s=4.0):
                             "yielded no cards — falling back")
                         search = None  # fall through to unfiltered
                 if search is None:
-                    # Unfiltered path: one extraction, client-side filter.
-                    raw = page.evaluate(EXTRACT_JS)
+                    # Unfiltered path: reload the Trade Center fresh
+                    # first, so this is genuinely unfiltered. (The old
+                    # code extracted from the page as left by the
+                    # search loop — still filtered to the last pet —
+                    # so a broken search made the "unfiltered"
+                    # fallback see the same empty view.)
+                    try:
+                        page.goto(TRADE_CENTER, timeout=60000,
+                                  wait_until="domcontentloaded")
+                        try:
+                            page.wait_for_selector(
+                                'img[src*="images/pets"], '
+                                'img[src*="images%2Fpets"]',
+                                timeout=30000)
+                        except Exception:
+                            pass
+                        page.wait_for_timeout(int(wait_s * 1000))
+                    except Exception:
+                        pass
+                    res = page.evaluate(EXTRACT_JS)
+                    raw = (res.get("cards", [])
+                           if isinstance(res, dict) else res)
+                    img_count = (res.get("image_count")
+                                 if isinstance(res, dict) else None)
                     for key, name in pet_names.items():
                         recs, _ = _raw_to_records(raw, key, name,
                                                   from_search=False)
@@ -387,8 +456,14 @@ def fetch_elvebredd_browser(pet_names, wait_s=4.0):
                     total = sum(len(v)
                                 for v in result["cards"].values())
                     result["method"] = "unfiltered+client-filter"
+                    diag = ""
+                    if img_count is not None:
+                        diag = (f"; {img_count} pet images in DOM; "
+                                f"search box "
+                                f"{'found' if search_found else 'missing'}")
                     result["status"] = (
-                        f"browser ok ({total} cards, unfiltered feed)")
+                        f"browser ok ({total} cards, unfiltered feed"
+                        f"{diag})")
             finally:
                 browser.close()
     except Exception as exc:
