@@ -4,10 +4,10 @@ Adopt Me trade watch — standalone checker + dashboard generator.
 
 What it does (read-only, no login, no posting, no trading):
   * Fetches the Adopt Me Trading Values (AMTV) pet pages and the public
-    "Recent Offers & Trades" snapshot endpoint for three pets:
-      - Sugar Axolotl      (AMTV id 2550)
-      - Strawberry Shortcake Bat Dragon / SSBD (AMTV id 1427)
-      - Monkey King        (AMTV id 14)
+    "Recent Offers & Trades" snapshot endpoint for the pets listed in
+    data/watched_pets.json (default: Sugar Axolotl, Strawberry
+    Shortcake Bat Dragon / SSBD, Monkey King). The dashboard's "Pets to
+    watch" picker writes that file, so the owner picks the pets.
     AMTV other-side pets are icons, not text, so offered pets are reported
     as icon ids + badge codes (F/R/N/M). Names are NEVER invented.
   * Fetches the Elvebredd Trade Center page and reads the pet value catalog
@@ -77,11 +77,82 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
 # AMTV pet ids verified from adoptmetradingvalues.com/what-is-worth/<id>
-PETS = {
+# The watched-pet list lives in data/watched_pets.json
+# ({"pets": [display names]}), written by the dashboard's "Pets to
+# watch" picker. Names resolve to AMTV ids via pet_names.json (exact,
+# case-insensitive); a name that doesn't resolve is reported, never
+# invented. Missing/empty/invalid file falls back to the three
+# original pets below. At most MAX_WATCHED_PETS are watched.
+WATCHED_PETS_PATH = os.path.join(DATA_DIR, "watched_pets.json")
+MAX_WATCHED_PETS = 6
+DEFAULT_PETS = {
     "sugar_axolotl": {"name": "Sugar Axolotl", "amtv_id": "2550"},
     "ssbd": {"name": "Strawberry Shortcake Bat Dragon", "amtv_id": "1427"},
     "monkey_king": {"name": "Monkey King", "amtv_id": "14"},
 }
+# Keep the existing keys for the three original pets so seen.json
+# history and dedupe survive a switch to the file-based list.
+KNOWN_KEYS = {
+    "sugar axolotl": "sugar_axolotl",
+    "strawberry shortcake bat dragon": "ssbd",
+    "monkey king": "monkey_king",
+}
+
+
+def _slug_key(name):
+    slug = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+    return slug or "pet"
+
+
+def load_watched_pets():
+    """(PETS dict, unresolved names, over-limit names)."""
+    names = None
+    if os.path.exists(WATCHED_PETS_PATH):
+        try:
+            with open(WATCHED_PETS_PATH) as fh:
+                data = json.load(fh)
+            if isinstance(data, dict) and isinstance(data.get("pets"),
+                                                    list):
+                names = [str(n).strip() for n in data["pets"]
+                         if str(n).strip()]
+        except Exception:
+            names = None
+    if not names:
+        return dict(DEFAULT_PETS), [], []
+    by_name = {}
+    for _id, _name in PET_NAMES.items():
+        by_name.setdefault(_name.lower(), []).append(_id)
+    pets, unresolved, over_limit = {}, [], []
+    seen_names = set()
+    for raw in names:
+        low = raw.lower()
+        if low in seen_names:
+            continue
+        seen_names.add(low)
+        ids = by_name.get(low)
+        if not ids:
+            unresolved.append(raw)
+            continue
+        if len(pets) >= MAX_WATCHED_PETS:
+            over_limit.append(raw)
+            continue
+        # A name mapping to several ids is always an item/sticker
+        # variant, never a pet; the lowest id is the base entry.
+        amtv_id = sorted(ids, key=lambda x: int(x) if x.isdigit()
+                         else 0)[0]
+        key = KNOWN_KEYS.get(low) or _slug_key(PET_NAMES[amtv_id])
+        base_key = key
+        n = 2
+        while key in pets:
+            key = f"{base_key}_{n}"
+            n += 1
+        pets[key] = {"name": PET_NAMES[amtv_id], "amtv_id": amtv_id}
+    if not pets:
+        return dict(DEFAULT_PETS), unresolved, over_limit
+    return pets, unresolved, over_limit
+
+
+PETS, UNRESOLVED_PETS, OVER_LIMIT_PETS = load_watched_pets()
 
 AMTV_PAGE = "https://adoptmetradingvalues.com/what-is-worth/{id}"
 AMTV_SNAPSHOT = ("https://adoptmetradingvalues.com/gettrades.php"
@@ -269,7 +340,7 @@ def parse_amtv_snapshot(snap_html, pet_key):
 # ---------------------------------------------------------------- Elvebredd
 
 def parse_elvebredd_catalog(page_html):
-    """Current Elvebredd values for the three pets, from the pet catalog
+    """Current Elvebredd values for the watched pets, from the pet catalog
     JSON embedded in the Trade Center page. Returns {pet_name: values}."""
     # The catalog sits inside a JS string in the page, so its quotes arrive
     # backslash-escaped (\"name\":...). Unescape quotes before matching.
@@ -368,6 +439,19 @@ offered) — plain, FR, MFR and the rest are all different to the matcher.
 <br><label><input type="checkbox" id="onlyMine" onclick="toggleOnlyMine()"> For me only — show just cards whose You side I can fill exactly</label>
 <br><label><input type="checkbox" id="activeOnly" onclick="toggleActiveOnly()"> Active only — hide completed history</label>
 <span id="onlyMineHint" class="meta"></span></div>
+
+<div class="note" id="petsPanel">
+<h2 style="margin-top:0">🐾 Pets to watch</h2>
+<p class="meta">These are the pets the program checks on AMTV and Elvebredd —
+type one pet name per line, exact name as on the value sites (e.g.
+Sugar Axolotl). This is different from the inventory box above:
+inventory only highlights matches, it never changes what's checked.
+Up to 6 pets. A change takes effect on the next check.</p>
+<textarea id="petsToWatch" placeholder="Sugar Axolotl&#10;Strawberry Shortcake Bat Dragon&#10;Monkey King"></textarea>
+<br><button onclick="savePets()">Save pets to watch</button>
+<span id="petsMsg" class="meta"></span>
+<p class="meta" id="petsUnresolved"></p>
+</div>
 
 <div class="note" id="schedPanel">
 <h2 style="margin-top:0">⏱ Check-in rhythm</h2>
@@ -564,6 +648,56 @@ function clearKey(){
   localStorage.removeItem("amw-gh-key");
   document.getElementById("keyMsg").textContent="Key forgotten.";
 }
+// ---- Pets to watch panel ----
+// The watched-pet list lives in data/watched_pets.json in the repo;
+// saving it goes through the same GitHub key as the schedule panel.
+const PETS_PATH="data/watched_pets.json";
+let petsRendered=false;
+function renderPets(){
+  const data=JSON.parse(document.getElementById("watch-data").textContent);
+  const list=data.watched_pets||data.pets.map(p=>p.name);
+  if(!petsRendered){
+    petsRendered=true;
+    document.getElementById("petsToWatch").value=list.join("\n");
+  }
+  const un=(data.unresolved_pets||[]).concat(data.over_limit_pets||[]);
+  document.getElementById("petsUnresolved").textContent = un.length
+    ? "Not watched — couldn't find these names, check the spelling: "+un.join(", ")+"."
+    : "";
+}
+async function ghSavePets(names, msgEl){
+  const key=localStorage.getItem("amw-gh-key")||"";
+  if(!key){ document.getElementById("keyMsg").textContent="Paste your key below first, then try again."; return false; }
+  msgEl.textContent="Saving…";
+  try{
+    const api="https://api.github.com/repos/"+SCHED_REPO+"/contents/"+PETS_PATH;
+    const headers={Authorization:"Bearer "+key, Accept:"application/vnd.github+json"};
+    let sha=null;
+    const get=await fetch(api,{headers});
+    if(get.ok){ sha=(await get.json()).sha; }
+    else if(get.status!==404){ throw new Error("GitHub said "+get.status); }
+    const body={message:"Update watched pets from dashboard",
+      content:btoa(unescape(encodeURIComponent(JSON.stringify({pets:names},null,2)))),
+      branch:"main"};
+    if(sha) body.sha=sha;
+    const put=await fetch(api,{method:"PUT",headers:headers,body:JSON.stringify(body)});
+    if(!put.ok){ let t=""; try{ t=(await put.json()).message||""; }catch(e){} throw new Error("GitHub said "+put.status+(t?" — "+t:"")); }
+    msgEl.textContent="Pets to watch saved. The next check (within ~5 minutes) will pick them up; this panel refreshes after that check.";
+    return true;
+  }catch(e){
+    msgEl.textContent="Couldn't save: "+e.message;
+    return false;
+  }
+}
+async function savePets(){
+  const raw=document.getElementById("petsToWatch").value.split("\n")
+    .map(s=>s.trim()).filter(Boolean);
+  if(!raw.length){ document.getElementById("petsMsg").textContent="Type at least one pet name first."; return; }
+  const seen={};
+  const names=raw.filter(n=>{ const k=n.toLowerCase(); if(seen[k]) return false; seen[k]=1; return true; }).slice(0,6);
+  const ok=await ghSavePets(names, document.getElementById("petsMsg"));
+  if(ok && raw.length>6) document.getElementById("petsMsg").textContent+=" Only the first 6 are watched.";
+}
 // A card matches when every You-side entry is covered by inventory:
 // same pet name, exact same badges, enough count. "Add"/"Add Big"/"Add Small"
 // and unknown extras do not match (they are not in the inventory format).
@@ -702,6 +836,7 @@ function render(){
   }
   document.getElementById("sections").innerHTML=out;
   renderSchedule();
+  renderPets();
 }
 render();
 setInterval(tickLiveAgo, 30000);
@@ -920,7 +1055,7 @@ def main():
             elve_values = parse_elvebredd_catalog(page)
             if elve_values:
                 elve_status = ("catalog read "
-                               f"({len(elve_values)} of 3 pets found)")
+                               f"({len(elve_values)} of {len(PETS)} pets found)")
                 break
             elve_status = "catalog empty (page truncated?) — retrying"
             time.sleep(REQUEST_DELAY)
@@ -1039,6 +1174,9 @@ def main():
         json.dump(seen, fh, indent=2)
     interval, source = effective_interval_min(schedule, now_dt)
     dashboard = {"generated_at": now, "pets": dashboard_pets,
+                 "watched_pets": [p["name"] for p in PETS.values()],
+                 "unresolved_pets": UNRESOLVED_PETS,
+                 "over_limit_pets": OVER_LIMIT_PETS,
                  "schedule": {
                      "default_interval_min": schedule.get(
                          "default_interval_min", 15),
